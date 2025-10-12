@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@900&display=swap");
+
+.pageContainer {
+  width: 100%;
+  min-height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-12) var(--spacing-4);
+  font-family: "Helvetica Neue", var(--font-family-base);
+  position: relative;
+}
+
+.navigation {
+  position: fixed;
+  top: 10;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-6) var(--spacing-8);
+  z-index: var(--z-nav);
+}
+
+.navLink {
+  font-family:
+    "Work Sans",
+    "Helvetica Neue",
+    Arial Black,
+    sans-serif;
+  font-weight: 600;
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #777;
+  text-decoration: none;
+  transition: opacity var(--animation-duration-fast) ease;
+  mix-blend-mode: difference;
+}
+
+.navLink:hover {
+  opacity: 0.7;
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: calc(var(--spacing-12) + var(--spacing-6));
+}
+
+.header {
+  width: 100%;
+  margin-bottom: var(--spacing-12);
+}
+
+.title {
+  font-size: 0.8rem;
+  font-family:
+    "Work Sans",
+    "Helvetica Neue",
+    Arial Black,
+    sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #000000;
+  margin-bottom: var(--spacing-4);
+}
+
+.date {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.descriptionSection {
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: var(--spacing-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.description {
+  font-size: 0.7rem;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.detailedInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  font-size: 0.7rem;
+  line-height: 1.5;
+  text-transform: none;
+}
+
+.infoItem {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-2);
+}
+
+.infoLabel {
+  font-weight: 400;
+  color: #000000;
+}
+
+.infoValue {
+  font-weight: 400;
+  color: #000000;
+}
+
+.gallery {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background-color: var(--muted);
+}
+
+/* Not Found Styles */
+.notFoundContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: calc(100vh - 120px); /* Full viewport minus header/footer */
+  padding: var(--spacing-8);
+  font-family: "Helvetica Neue", var(--font-family-base);
+}
+
+.notFoundTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--foreground);
+}
+
+.backLink {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--foreground);
+  text-decoration: none;
+  border-bottom: 0.9px solid var(--foreground);
+  padding-bottom: var(--spacing-1);
+  transition:
+    color var(--animation-duration-fast),
+    border-color var(--animation-duration-fast);
+  text-transform: uppercase;
+}
+
+.backLink:hover {
+  color: var(--muted-foreground);
+  border-color: var(--muted-foreground);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@900&display=swap");
+
+  .pageContainer {
+    padding: var(--spacing-8) var(--spacing-4);
+  }
+
+  .navigation {
+    padding: var(--spacing-4) var(--spacing-4);
+  }
+
+  .navLink {
+    font-size: 0.6rem;
+  }
+
+  .contentWrapper {
+    margin-top: calc(var(--spacing-8) + var(--spacing-4));
+  }
+
+  .header {
+    margin-bottom: var(--spacing-8);
+  }
+
+  .title {
+    font-size: 0.8rem;
+  }
+
+  .date {
+    font-size: 0.65rem;
+  }
+
+  .descriptionSection {
+    margin-bottom: var(--spacing-8);
+    gap: var(--spacing-6);
+  }
+
+  .description {
+    font-size: 0.7rem;
+  }
+
+  .detailedInfo {
+    font-size: 0.7rem;
+  }
+
+  .gallery {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+  }
+
+  .notFoundTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--foreground);
+  }
+
+  .backLink {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: var(--foreground);
+    text-decoration: none;
+    border-bottom: 0.9px solid var(--foreground);
+    padding-bottom: var(--spacing-1);
+    transition:
+      color var(--animation-duration-fast),
+      border-color var(--animation-duration-fast);
+    text-transform: uppercase;
+  }
+}

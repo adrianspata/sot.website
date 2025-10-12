@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@900&display=swap");
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-8);
+  background-color: #ffffff;
+  z-index: var(--z-nav-sticky);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  transition: background-color var(--animation-duration-normal) absolute;
+}
+
+.header.scrolled {
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.logo {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.logoImg {
+  height: 80px;
+  width: auto;
+  display: block;
+  transition: opacity var(--animation-duration-fast) ease;
+}
+
+.nav {
+  display: flex;
+  gap: var(--spacing-8);
+  align-items: center;
+}
+
+.navLink {
+  color: #000000;
+  font-family:
+    "Work Sans",
+    "Helvetica Neue",
+    Arial Black,
+    sans-serif;
+  font-weight: 900;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: color var(--animation-duration-fast) ease;
+  text-transform: uppercase;
+}
+
+.navLink:hover {
+  color: #c19a6b;
+}
+
+.navLinkActive {
+  text-decoration: underline;
+}
+
+/* Mobile Menu Button */
+.mobileMenuButton {
+  display: none;
+  background: none;
+  border: none;
+  color: #000000;
+  font-family:
+    "Work Sans",
+    "Helvetica Neue",
+    Arial Black,
+    sans-serif;
+  font-weight: 900;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+  transition: color var(--animation-duration-fast) ease;
+}
+
+.mobileMenuButton:hover {
+  color: #c19a6b;
+}
+
+/* Mobile Menu Overlay */
+.mobileMenuOverlay {
+  position: fixed;
+  top: 60px;
+  right: -100%;
+  bottom: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: calc(var(--z-nav-sticky) - 1);
+  display: none;
+  flex-direction: column;
+  transition: right var(--animation-duration-normal) ease;
+}
+
+.mobileMenuOverlayOpen {
+  right: 0;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-8);
+  gap: var(--spacing-6);
+  flex: 1;
+}
+
+.mobileCurrencyWrapper {
+  padding: var(--spacing-8);
+  padding-top: 0;
+}
+
+.mobileCurrencySelector {
+  /* Additional mobile-specific styling if needed */
+}
+
+.mobileNavLink {
+  color: #000000;
+  font-family:
+    "Work Sans",
+    "Helvetica Neue",
+    Arial Black,
+    sans-serif;
+  font-weight: 900;
+    font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: color var(--animation-duration-fast) ease;
+  text-transform: uppercase;
+}
+
+.mobileNavLink:hover {
+  color: #c19a6b;
+}
+
+.mobileNavLinkActive {
+  text-decoration: underline;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 var(--spacing-4);
+  }
+
+  /* Hide desktop nav on mobile */
+  .nav {
+    display: none;
+  }
+
+  /* Show mobile menu button */
+  .mobileMenuButton {
+    display: block;
+  }
+
+  /* Show mobile menu overlay when active */
+  .mobileMenuOverlay {
+    display: flex;
+  }
+}
