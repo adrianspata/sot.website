@@ -54,7 +54,7 @@ const HomePage = () => {
         <section className={styles.heroSection}>
           <Link to="/projects" className={styles.heroLink}>
             <img
-                            src="public/images/mayagodajf4.3.jpg"
+                            src="/images/mayagodajf4.3.jpg"
               alt="SOT Stockholm - New website coming soon"
               className={styles.heroImage}
             />
