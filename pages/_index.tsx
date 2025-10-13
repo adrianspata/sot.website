@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "@dr.pogodin/react-helmet";
 import { HorizontalImageGallery } from "../components/HorizontalImageGallery";
 import styles from "./_index.module.css";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "@dr.pogodin/react-helmet";
 import styles from "./about.module.css";
 
 const AboutPage = () => {
