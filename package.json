@@ -10,6 +10,9 @@
     "preview": "vite preview",
     "server": "tsx server.ts"
   },
+  "overrides": {
+    "scheduler": "0.23.2"
+  },
   "dependencies": {
     "@dr.pogodin/react-helmet": "^3.0.4",
     "@hono/node-server": "^1.13.8",
