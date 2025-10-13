@@ -6,7 +6,7 @@ import styles from "./projects.module.css";
 const projects = [
   {
     id: "sot-07",
-    src: "/images/SOT__5 (kopia).jpg",
+    src: "/images/SOT__5(kopia).jpg",
     alt: "sot-07",
     title: "THE HAND OVER",
     description:
@@ -15,7 +15,7 @@ const projects = [
   },
   {
     id: "sot-06",
-    src: "/images/SOT Mag cover plastic10.jpg",
+    src: "/images/SOTMagcoverplastic10.jpg",
     alt: "sot-06",
     title: "SOT MAGAZINE",
     description: "ISSUE O1 - SUMMER 24'",
@@ -23,7 +23,7 @@ const projects = [
   },
   {
     id: "sot-05",
-    src: "/images/louise x4 (kopia).jpg",
+    src: "/images/louisex4(kopia).jpg",
     alt: "sot-05",
     title: "Louis Wood",
     description: "Louis Wood for SOT.",
@@ -31,7 +31,7 @@ const projects = [
   },
   {
     id: "sot-04",
-    src: "/images/godajf äppel bild small logo (kopia).jpg",
+    src: "/images/godajfappelbildsmalllogo(kopia).jpg",
     alt: "sot-04",
     title: "Incense Collection 2024",
     description: "First incense stick collection for 2024",

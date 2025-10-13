@@ -53,7 +53,7 @@ export const Header = () => {
         <div className={styles.logo}>
           <Link to="/">
             <img 
-              src="https://assets.floot.app/b8bbf1b5-c008-46f4-acc5-3490cd9ccc4b/d34b9084-5deb-4760-b6a3-1c833f057e23.png" 
+              src="/images/sotLogoSingle.png" 
               alt="SOT Logo"
               className={styles.logoImg}
             />

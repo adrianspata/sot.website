@@ -48,14 +48,14 @@ const HomePage = () => {
     <>
       {/* <Helmet>
         <title>SOT | Home</title>
-        <meta name="description" content="Minimalist brand homepage." />
+        <meta name="description" content="SOT STOCKHOLM" />
       </Helmet> */}
       <div className={styles.pageContainer}>
         <section className={styles.heroSection}>
           <Link to="/projects" className={styles.heroLink}>
             <img
                             src="/images/mayagodajf4.3.jpg"
-              alt="SOT Stockholm - New website coming soon"
+              alt="Maya Nilsen for SOT"
               className={styles.heroImage}
             />
           </Link>

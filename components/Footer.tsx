@@ -116,7 +116,7 @@ export const Footer = () => {
             </button>
             {status === "success" ? (
               <div className={styles.thankYouMessage}>
-                SORRY, NO DISCOUNTS THIS TIME
+                THANK YOU, BUT NO DISCOUNTS THOUGH
               </div>
             ) : (
               <form
@@ -160,7 +160,7 @@ export const Footer = () => {
           {/* Currency selector - commented out for now, uncomment when adding products */}
           {/* <CurrencySelector className={styles.currencySelector} /> */}
           <img
-            src="https://assets.floot.app/b8bbf1b5-c008-46f4-acc5-3490cd9ccc4b/6a451ccd-5997-4e88-b150-5e54a7bc0f44.png"
+            src="/images/SOTfinalLogo.png"
             alt="SOT Logo"
             className={styles.logo}
           />
@@ -175,7 +175,7 @@ export const Footer = () => {
           <div className={styles.mobileNewsletterHeading}>NEWSLETTER</div>
           {mobileStatus === "success" ? (
             <div className={styles.mobileThankYouMessage}>
-              SORRY, NO DISCOUNTS THIS TIME
+              THANK YOU, BUT NO DISCOUNTS THOUGH
             </div>
           ) : (
             <form
@@ -218,7 +218,7 @@ export const Footer = () => {
           {/* Currency selector - commented out for now, uncomment when adding products */}
           {/* <CurrencySelector className={styles.mobileCurrencySelector} /> */}
           <img
-            src="https://assets.floot.app/b8bbf1b5-c008-46f4-acc5-3490cd9ccc4b/6a451ccd-5997-4e88-b150-5e54a7bc0f44.png"
+            src="/images/SOTfinalLogo.png"
             alt="SOT Logo"
             className={styles.logo}
           />
