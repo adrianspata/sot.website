@@ -6,39 +6,39 @@ import styles from "./_index.module.css";
 
 const homeImages = [
   {
-    src: "public/images/louise x4.jpg",
+    src: "/images/louise x4.jpg",
     alt: "Louise x4",
   },
   {
-    src: "public/images/sot_scan 2.jpg",
+    src: "/images/sot_scan 2.jpg",
     alt: "SOT polaroid",
   },
   {
-    src: "public/images/incensemayaimg2text.jpg",
+    src: "/images/incensemayaimg2text.jpg",
     alt: "incense sticks",
   },
   {
-    src: "public/images/louis 3 sticks b&w.jpg",
+    src: "/images/louis 3 sticks b&w.jpg",
     alt: "Louise holding incense sticks",
   },
   {
-    src: "public/images/sotStepsN.jpg",
+    src: "/images/sotStepsN.jpg",
     alt: "Legs for SOT",
   },
   {
-    src: "public/images/800C3245-31CF-4991-8131-BD320E43DCBE.JPG",
+    src: "/images/800C3245-31CF-4991-8131-BD320E43DCBE.JPG",
     alt: "Max in elevator",
   },
   {
-    src: "public/images/mayamastik4.3.jpg",
+    src: "/images/mayamastik4.3.jpg",
     alt: "Maya Mastik",
   },
   {
-    src: "public/images/sot_scan3 croped.jpg",
+    src: "/images/sot_scan3 croped.jpg",
     alt: "Polaroid of Max",
   },
   {
-    src: "public/images/sotBagSteps2.jpg",
+    src: "/images/sotBagSteps2.jpg",
     alt: "Legs for SOT",
   },
 ];
