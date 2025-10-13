@@ -5,10 +5,10 @@ import styles from "./about.module.css";
 const AboutPage = () => {
   return (
     <>
-      <Helmet>
+      {/*<Helmet>
         <title>SOT | About</title>
         <meta name="description" content="About SOT." />
-      </Helmet>
+      </Helmet>*/}
       <div className={styles.pageContainer}>
         <div className={styles.leftPanel}>
           <h1 className={styles.heading}>About</h1>

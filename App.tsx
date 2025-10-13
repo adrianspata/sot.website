@@ -31,6 +31,7 @@ const fileNameToComponent = new Map([
 
 function makePageRoute(filename: string) {
   const Component = fileNameToComponent.get(filename);
+  if (!Component) return null;
   return <Component />;
 }
 

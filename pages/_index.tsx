@@ -46,10 +46,10 @@ const homeImages = [
 const HomePage = () => {
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>SOT | Home</title>
         <meta name="description" content="Minimalist brand homepage." />
-      </Helmet>
+      </Helmet> */}
       <div className={styles.pageContainer}>
         <section className={styles.heroSection}>
           <Link to="/projects" className={styles.heroLink}>

@@ -103,7 +103,6 @@
 
 /* Mobile: 2 columns with tighter spacing */
 @media (max-width: 768px) {
-  @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@900&display=swap");
 
   .pageContainer {
     padding-top: calc(60px + var(--spacing-8));

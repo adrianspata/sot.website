@@ -66,10 +66,10 @@ const projects = [
 const ProjectsPage = () => {
   return (
     <>
-      <Helmet>
+      {/*<Helmet>
         <title>SOT | Projects</title>
         <meta name="description" content="A collection of our projects." />
-      </Helmet>
+      </Helmet> */}
       <div className={styles.pageContainer}>
         <div className={styles.gridContainer}>
           {projects.map((project) => (

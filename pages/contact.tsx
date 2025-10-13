@@ -5,10 +5,10 @@ import styles from "./contact.module.css";
 const ContactPage = () => {
   return (
     <>
-      <Helmet>
+      {/*<Helmet>
         <title>SOT | Contact</title>
         <meta name="description" content="Contact information for SOT." />
-      </Helmet>
+      </Helmet>*/}
       <div className={styles.pageContainer}>
         <div className={styles.leftPanel}>
           <h1 className={styles.heading}>Contact</h1>

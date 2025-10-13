@@ -275,9 +275,9 @@ const ProjectDetailPage = () => {
   if (!project) {
     return (
       <div className={styles.notFoundContainer}>
-        <Helmet>
+        {/*<Helmet>
           <title>SOT | Project Not Found</title>
-        </Helmet>
+        </Helmet>*/}
         <h1 className={styles.notFoundTitle}>404 PAGE NOT FOUND</h1>
         <Link to="/projects" className={styles.backLink}>
           BACK TO PROJECTS
@@ -288,10 +288,10 @@ const ProjectDetailPage = () => {
 
   return (
     <>
-      <Helmet>
+      {/*<Helmet>
         <title>SOT | {project.title}</title>
         <meta name="description" content={project.fullDescription} />
-      </Helmet>
+      </Helmet>*/}
       <div className={styles.pageContainer}>
         {/* Navigation */}
         <nav className={styles.navigation}>
