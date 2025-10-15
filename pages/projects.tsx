@@ -6,7 +6,7 @@ import styles from "./projects.module.css";
 const projects = [
   {
     id: "sot-07",
-    src: "/images/SOT__5(kopia).jpg",
+    src: "/images/SOT__5(kopia).webp",
     alt: "sot-07",
     title: "THE HAND OVER",
     description:
@@ -14,16 +14,8 @@ const projects = [
     date: "31/05/2025",
   },
   {
-    id: "sot-06",
-    src: "/images/SOTMagcoverplastic10.jpg",
-    alt: "sot-06",
-    title: "SOT MAGAZINE",
-    description: "ISSUE O1 - SUMMER 24'",
-    date: "17/08/2024",
-  },
-  {
     id: "sot-05",
-    src: "/images/louisex4(kopia).jpg",
+    src: "/images/louisex4(kopia).webp",
     alt: "sot-05",
     title: "Louis Wood",
     description: "Louis Wood for SOT.",
@@ -31,7 +23,7 @@ const projects = [
   },
   {
     id: "sot-04",
-    src: "/images/godajfappelbildsmalllogo(kopia).jpg",
+    src: "/images/godajfappelbildsmalllogo(kopia).webp",
     alt: "sot-04",
     title: "Incense Collection 2024",
     description: "First incense stick collection for 2024",
@@ -39,15 +31,23 @@ const projects = [
   },
   {
     id: "sot-03",
-    src: "/images/IMG_0442.jpg",
+    src: "/images/IMG_0442.webp",
     alt: "sot-03",
     title: "Your order has been shipped",
     description: "Your order has been shipped. A campaign for summer 2024, showcasing our packaging in various settings around Stockholm",
     date: "15/07/2024",
   },
   {
+    id: "sot-020",
+    src: "/images/P11205732.webp",
+    alt: "sot-03",
+    title: "What Is The World To You?",
+    description: "A short evocative visual",
+    date: "12/06/2024",
+  },
+  {
     id: "sot-02",
-    src: "/images/launche-invite30th.jpg",
+    src: "/images/people5bw.webp",
     alt: "sot-02",
     title: "SOT Launch Event",
     description: "Launch event for SOT incense collection",
@@ -55,7 +55,7 @@ const projects = [
   },
   {
     id: "sot-01",
-    src: "/images/mayagodajf4.3.jpg",
+    src: "/images/mayagodajf4.3.webp",
     alt: "sot-01",
     title: "Maya Nilsen for SOT",
     description: "Maya Nilsen for SOT 2024. Premium incense sticks collection",

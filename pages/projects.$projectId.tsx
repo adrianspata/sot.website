@@ -8,17 +8,19 @@ interface ProjectDetail {
   title: string;
   date: string;
   fullDescription: string;
-  detailedInfo: {
-    label: string;
-    value: string;
-  }[];
-  images: {
-    src: string;
-    alt: string;
-  }[];
+  detailedInfo: { label: string; value: string }[];
+  images: { src: string; alt: string }[];
+  videos?: Array<{
+    mp4: string; 
+    poster?: string; 
+    alt?: string;    
+    autoplay?: boolean; 
+    loop?: boolean;    
+    muted?: boolean;     
+    controls?: boolean;  
+  }>;
 }
 
-// Hardcoded project data as requested
 const projectsData: ProjectDetail[] = [
   {
     id: "sot-07",
@@ -27,63 +29,39 @@ const projectsData: ProjectDetail[] = [
     fullDescription:
       "A short visual brought to life with some help from good friends.",
     detailedInfo: [
+      { label: "Talent", value: "Max Birch" },
       { label: "Photography", value: "Sylwia Dziobon" },
       { label: "Styling", value: "Maya Nilsen" },
-      { label: "Cast", value: "Max Birch" },
       { label: "Sound & Music", value: "Arvid Jonsson" },
+      { label: "BTS", value: "Yusuf Tolosa" },
+    ],
+    videos: [
+      {
+        mp4: "/videos/TheHandOverFull.MP4",
+        poster: "/images/SOT_5mobile.webp",
+        alt: "SOT - The Hand Over",
+        autoplay: true,
+        loop: true,
+        muted: true,
+        controls: false,
+      },
     ],
     images: [
       {
-        src: "/images/SOT_ 5 mobile.jpg",
+        src: "/images/SOT_5mobile.webp",
         alt: "01",
       },
       {
-        src: "/images/sot_scan 1.jpg",
+        src: "/images/sot_scan1.webp",
         alt: "02",
       },
       {
-        src: "/images/SOT__1.jpg",
+        src: "/images/SOT__1.webp",
         alt: "03",
       },
       {
-        src: "/images/SOT__4.jpg",
+        src: "/images/SOT__4.webp",
         alt: "04",
-      },
-    ],
-  },
-  {
-    id: "sot-06",
-    title: "SOT MAGAZINE",
-    date: "17 / 08 / 2024",
-    fullDescription:
-      "This magazine is purely fictional made for entertainment purposes only. It is not an actual publication and won't be available for purchase - Yet...",
-    detailedInfo: [
-      { label: "Produced by", value: "SOT Stockholm" },
-    ],
-    images: [
-      {
-        src: "/images/sot mag cover opt4.jpg",
-        alt: "01",
-      },
-      {
-        src: "/images/SOT Mag Mock_01.jpg",
-        alt: "02",
-      },
-      {
-        src: "/images/SOT mag plastic cover mock .jpg",
-        alt: "03",
-      },
-      {
-        src: "/images/SOT Mag cover plastic 6 svart.jpg",
-        alt: "04",
-      },
-      {
-        src: "/images/sot mag page 15-16.jpg",
-        alt: "05",
-      },
-      {
-        src: "/images/sot mag page 25-26.jpg",
-        alt: "06",
       },
     ],
   },
@@ -99,23 +77,23 @@ const projectsData: ProjectDetail[] = [
     ],
     images: [
       {
-        src: "/images/louis 3 sticks b&w.jpg",
+        src: "/images/louis3sticksb&w.webp",
         alt: "01",
       },
       {
-        src: "/images/louise x4.jpg",
+        src: "/images/louisexx4.webp",
         alt: "02",
       },
       {
-        src: "/images/P1140042.JPG",
+        src: "/images/P1140042.webp",
         alt: "03",
       },
       {
-        src: "/images/P1140046.JPG",
+        src: "/images/P1140046.webp",
         alt: "04",
       },
       {
-        src: "/images/P1140049.JPG",
+        src: "/images/P1140049.webp",
         alt: "05",
       },
     ],
@@ -133,15 +111,15 @@ const projectsData: ProjectDetail[] = [
     ],
     images: [
       {
-        src: "/images/godajfappelbildsmalllogo.jpg",
+        src: "/images/godajfappelbildsmalllogo.webp",
         alt: "01",
       },
       {
-        src: "/images/agrumeappelbildsmalllogo.jpg",
+        src: "/images/agrumeappelbildsmalllogo.webp",
         alt: "02",
       },
       {
-        src: "/images/mastikappelbild.jpg",
+        src: "/images/mastikappelbild.webp",
         alt: "03",
       },
     ],
@@ -151,28 +129,72 @@ const projectsData: ProjectDetail[] = [
     title: "Your order has been shipped",
     date: "15 / 07 / 2024",
     fullDescription:
-      "Your order has been shipped. A campaign for summer 2024, showcasing our packaging in various settings around Stockholm.",
+      "Your order has been shipped. A campaign for summer 2024, showcasing our product being delivered around Stockholm.",
     detailedInfo: [],
+    videos: [
+      {
+        mp4: "/videos/Shipping.mp4",
+        poster: "/images/sotBagSteps2.webp",
+        alt: "Your order has been shipped",
+        autoplay: true,
+        loop: true,
+        muted: true,
+        controls: false,
+      },
+    ],
     images: [
       {
-        src: "/images/sotBagSteps2.jpg",
+        src: "/images/sotBagSteps2.webp",
         alt: "01",
       },
       {
-        src: "/images/sotStepsN.jpg",
+        src: "/images/sotStepsN.webp",
         alt: "02",
       },
       {
-        src: "/images/IMG_0442.jpg",
+        src: "/images/IMG_0442.webp",
         alt: "03",
       },
       {
-        src: "/images/IMG_0492.jpg",
+        src: "/images/IMG_0492.webp",
         alt: "04",
       },
       {
-        src: "/images/IMG_0533.jpg",
+        src: "/images/IMG_0533.webp",
         alt: "05",
+      },
+    ],
+  },
+  {
+    id: "sot-020",
+    title: "What Is The World To You?",
+    date: "12 / 06 / 2024",
+    fullDescription:
+      "A short evocative visual depicting the sensorial connection between scent and the human experience. Demonstrating the universal language of sensory expressions.",
+    detailedInfo: [
+      { label: "Writer, Director, Producer", value: "Aida Adem" },
+      { label: "DOP, Grade", value: "Adam Hermansson" },
+      { label: "Lights", value: "Louise Helmfrid" },
+      { label: "Edit", value: "Jade Brandt" },
+      { label: "Sound", value: "Lawrence Agbolah" },
+      { label: "Styling", value: "Maya Nilsen" },
+      { label: "Talents", value: "Maya Nilsen, Harrison First, Bondi Sowe, Marlon Spata, Robert Perez" },
+    ],
+    videos: [
+      {
+        mp4: "/videos/whatIsTheWorld.mp4",
+        poster: "/images/P11205732.webp",
+        alt: "What Is The World To You?",
+        autoplay: true,
+        loop: true,
+        muted: true,
+        controls: false,
+      },
+    ],
+    images: [
+      {
+        src: "/images/P11205732.webp",
+        alt: "02",
       },
     ],
   },
@@ -185,28 +207,36 @@ const projectsData: ProjectDetail[] = [
     detailedInfo: [],
     images: [
       {
-        src: "/images/people17.jpg",
+        src: "/images/people17.webp",
         alt: "01",
       },
       {
-        src: "/images/people25.jpg",
+        src: "/images/people25.webp",
         alt: "02",
       },
       {
-        src: "/images/people27.jpg",
+        src: "/images/people27.webp",
         alt: "03",
       },
       {
-        src: "/images/products9.jpg",
+        src: "/images/products9.webp",
         alt: "04",
       },
       {
-        src: "/images/people.jpg",
+        src: "/images/people3.webp",
         alt: "05",
       },
       {
-        src: "/images/people9.jpg",
+        src: "/images/people.webp",
         alt: "06",
+      },
+      {
+        src: "/images/people23.webp",
+        alt: "07",
+      },
+      {
+        src: "/images/people9.webp",
+        alt: "08",
       },
     ],
   },
@@ -223,28 +253,32 @@ const projectsData: ProjectDetail[] = [
     ],
     images: [
       {
-        src: "/images/mayagodajf4.3.jpg",
+        src: "/images/mayagodajf4.3.webp",
         alt: "01",
       },
       {
-        src: "/images/mayaagrume4.3.jpg",
+        src: "/images/mayaagrume4.3.webp",
         alt: "02",
       },
       {
-        src: "/images/mayamastik4.3.jpg",
+        src: "/images/mayamastik4.3.webp",
         alt: "03",
       },
       {
-        src: "/images/incensemayaimg1text.jpg",
+        src: "/images/goodincense4mastik.webp",
         alt: "04",
       },
       {
-        src: "/images/incensemayaimg2text.jpg",
+        src: "/images/incensemayaimg1text.webp",
         alt: "05",
       },
       {
-        src: "/images/SOTMaya-MASTIKside.jpg",
+        src: "/images/incensemayaimg2text.webp",
         alt: "06",
+      },
+      {
+        src: "/images/SOTMaya-MASTIKside.webp",
+        alt: "07",
       },
     ],
   },
@@ -333,6 +367,26 @@ const ProjectDetailPage = () => {
               ))}
             </div>
           </section>
+
+        {project.videos?.length ? (
+          <section className={styles.mediaGrid}>
+            {project.videos.map((v, idx) => (
+              <figure key={`vid-${idx}`} className={styles.mediaItem}>
+                <video
+                  className={styles.media}
+                  autoPlay={v.autoplay ?? true}
+                  muted={v.muted ?? true}
+                  loop={v.loop ?? true}
+                  playsInline
+                  controls={v.controls ?? false}
+                  poster={v.poster}
+                >
+                  <source src={v.mp4} type="video/mp4" />
+                </video>
+              </figure>
+            ))}
+          </section>
+        ) : null}
 
           <section className={styles.gallery}>
             {project.images.map((image, index) => (
