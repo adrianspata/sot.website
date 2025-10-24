@@ -12,7 +12,7 @@ interface ProjectDetail {
   images: { src: string; alt: string }[];
   videos?: Array<{
     mp4: string; 
-    poster?: string; 
+    poster?: string;
     alt?: string;    
     autoplay?: boolean; 
     loop?: boolean;    
@@ -38,7 +38,7 @@ const projectsData: ProjectDetail[] = [
     videos: [
       {
         mp4: "/videos/TheHandOverFull.MP4",
-        poster: "/images/SOT_5mobile.webp",
+        poster: "/images/THO-thumbnail.webp",
         alt: "SOT - The Hand Over",
         autoplay: true,
         loop: true,
@@ -134,7 +134,7 @@ const projectsData: ProjectDetail[] = [
     videos: [
       {
         mp4: "/videos/Shipping.mp4",
-        poster: "/images/sotBagSteps2.webp",
+        poster: "/images/shipping-thumbnail.webp",
         alt: "Your order has been shipped",
         autoplay: true,
         loop: true,
@@ -183,7 +183,7 @@ const projectsData: ProjectDetail[] = [
     videos: [
       {
         mp4: "/videos/whatIsTheWorld.mp4",
-        poster: "/images/P11205732.webp",
+        poster: "/images/witwty?-thumbnail.webp",
         alt: "What Is The World To You?",
         autoplay: true,
         loop: true,
