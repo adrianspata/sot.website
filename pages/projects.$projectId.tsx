@@ -183,7 +183,7 @@ const projectsData: ProjectDetail[] = [
     videos: [
       {
         mp4: "/videos/whatIsTheWorld.mp4",
-        poster: "/images/witwty?-thumbnail.webp",
+        poster: "/images/witwty-thumbnail.webp",
         alt: "What Is The World To You?",
         autoplay: true,
         loop: true,
