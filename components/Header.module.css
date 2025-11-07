@@ -29,7 +29,7 @@
 }
 
 .logoImg {
-  height: 80px;
+  height: 3rem;
   width: auto;
   display: block;
   transition: opacity var(--animation-duration-fast) ease;
@@ -117,10 +117,6 @@
 .mobileCurrencyWrapper {
   padding: var(--spacing-8);
   padding-top: 0;
-}
-
-.mobileCurrencySelector {
-  /* Additional mobile-specific styling if needed */
 }
 
 .mobileNavLink {

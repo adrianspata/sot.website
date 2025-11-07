@@ -4,6 +4,29 @@ import { Helmet } from "@dr.pogodin/react-helmet";
 import { HorizontalImageGallery } from "../components/HorizontalImageGallery";
 import styles from "./_index.module.css";
 
+const ResponsiveHeroImage = ({ desktopSrc, mobileSrc, alt, linkTo }: { desktopSrc: string; mobileSrc?: string; alt: string; linkTo: string }) => {
+  return (
+    <>
+      {mobileSrc && (
+        <Link to={linkTo} className={styles.heroLink}>
+          <img 
+            src={mobileSrc} 
+            alt={alt} 
+            className={styles.heroImageMobile} 
+          />
+        </Link>
+      )}
+      <Link to={linkTo} className={styles.heroLink}>
+        <img 
+          src={desktopSrc} 
+          alt={alt} 
+          className={styles.heroImage} 
+        />
+      </Link>
+    </>
+  );
+};
+
 const HomePage = () => {
   return (
     <>
@@ -27,9 +50,13 @@ const HomePage = () => {
 </section>*/}
 
 <section className={styles.heroSection}> 
-  <Link to="/projects/sot-07" className={styles.heroLink}> 
-  <img src="/images/SOT_5.webp" alt="Max elevator" className={styles.heroImage} /> 
-  </Link> </section>
+  <ResponsiveHeroImage 
+    desktopSrc="/images/SOT_5.2.webp" 
+    mobileSrc="/images/SOT_5.2.webp" 
+    alt="Max elevator"
+    linkTo="/projects/sot-07"
+  />
+</section>
 
         <section className={styles.gallerySection}>
           <HorizontalImageGallery images={homeImages} />

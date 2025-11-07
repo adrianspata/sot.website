@@ -8,10 +8,11 @@
   height: 100%;
   width: auto;
   background-color: #ffffff;
-  padding-top: var(--spacing-16);
+  padding-top: var(--spacing-12);
   padding-left: var(--spacing-8);
   padding-right: var(--spacing-8);
   margin-bottom: 80px;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -23,16 +24,37 @@
 }
 
 .heroLink {
-  display: block;
-  width: 100%;
-  height: 100%;
+  display: inline-block;
 }
 
 .heroImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 35%;
+  height: auto;
+  object-fit: contain;
   object-position: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.heroImageMobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .heroImage {
+    display: none;
+  }
+  
+  .heroImageMobile {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 .gallerySection {
