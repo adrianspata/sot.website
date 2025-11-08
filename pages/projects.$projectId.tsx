@@ -11,13 +11,15 @@ interface ProjectDetail {
   detailedInfo: { label: string; value: string }[];
   images: { src: string; alt: string }[];
   videos?: Array<{
-    mp4: string; 
+    mp4?: string; 
+    vimeoId?: string;
     poster?: string;
     alt?: string;    
     autoplay?: boolean; 
     loop?: boolean;    
     muted?: boolean;     
     controls?: boolean;  
+    thumbnail?: boolean;
   }>;
 }
 
@@ -37,13 +39,15 @@ const projectsData: ProjectDetail[] = [
     ],
     videos: [
       {
-        mp4: "/videos/TheHandOverFull.MP4",
+        vimeoId: "1134630095",
+        // mp4: "/videos/TheHandOverFull.MP4",  //
         poster: "/images/THO-thumbnail.webp",
         alt: "SOT - The Hand Over",
-        autoplay: true,
+        autoplay: false,
         loop: true,
         muted: true,
-        controls: false,
+        controls: true,
+        thumbnail: true,
       },
     ],
     images: [
@@ -133,13 +137,15 @@ const projectsData: ProjectDetail[] = [
     detailedInfo: [],
     videos: [
       {
-        mp4: "/videos/Shipping.mp4",
+        vimeoId: "1134630052",
+        // mp4: "/videos/Shipping.mp4", //
         poster: "/images/shipping-thumbnail.webp",
         alt: "Your order has been shipped",
-        autoplay: true,
+        autoplay: false,
         loop: true,
         muted: true,
-        controls: false,
+        controls: true,
+        thumbnail: true,
       },
     ],
     images: [
@@ -182,13 +188,15 @@ const projectsData: ProjectDetail[] = [
     ],
     videos: [
       {
-        mp4: "/videos/whatIsTheWorld.mp4",
+        vimeoId: "1134630190",
+        // mp4: "/videos/whatIsTheWorld.mp4", //
         poster: "/images/witwty-thumbnail.webp",
         alt: "What Is The World To You?",
-        autoplay: true,
+        autoplay: false,
         loop: true,
         muted: true,
-        controls: false,
+        controls: true,
+        thumbnail: true,
       },
     ],
     images: [
@@ -372,17 +380,28 @@ const ProjectDetailPage = () => {
           <section className={styles.mediaGrid}>
             {project.videos.map((v, idx) => (
               <figure key={`vid-${idx}`} className={styles.mediaItem}>
-                <video
-                  className={styles.media}
-                  autoPlay={v.autoplay ?? true}
-                  muted={v.muted ?? true}
-                  loop={v.loop ?? true}
-                  playsInline
-                  controls={v.controls ?? false}
-                  poster={v.poster}
-                >
-                  <source src={v.mp4} type="video/mp4" />
-                </video>
+                {v.vimeoId ? (
+                  <iframe
+                    className={styles.media}
+                    src={`https://player.vimeo.com/video/${v.vimeoId}?autoplay=${v.autoplay ? 1 : 0}&loop=${v.loop ? 1 : 0}&muted=${v.muted ? 1 : 0}&controls=${v.controls ? 1 : 0}${!v.controls && !v.thumbnail ? '&background=1' : ''}&title=0&byline=0&portrait=0&badge=0&dnt=1&transparent=0&keyboard=0&pip=0${v.thumbnail ? '&autopause=0' : ''}`}
+                    frameBorder="0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                    title={v.alt || "Vimeo video"}
+                  ></iframe>
+                ) : v.mp4 ? (
+                  <video
+                    className={styles.media}
+                    autoPlay={v.autoplay ?? true}
+                    muted={v.muted ?? true}
+                    loop={v.loop ?? true}
+                    playsInline
+                    controls={v.controls ?? false}
+                    poster={v.poster}
+                  >
+                    <source src={v.mp4} type="video/mp4" />
+                  </video>
+                ) : null}
               </figure>
             ))}
           </section>

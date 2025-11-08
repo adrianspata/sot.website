@@ -131,9 +131,11 @@
   margin-bottom: var(--spacing-6); 
 }
 
-video.media {
+video.media,
+iframe.media {
   width: 100%;
   height: auto;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   background-color: var(--muted);
 }

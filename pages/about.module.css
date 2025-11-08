@@ -2,12 +2,12 @@
 
 .pageContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.5fr;
   gap: var(--spacing-16);
   align-items: start;
   min-height: 100%;
   width: 100%;
-  padding: 20vh var(--spacing-16) 0;
+  padding: 20vh var(--spacing-8) 0;
   background-color: #ffffff;
 }
 
@@ -36,13 +36,13 @@
   gap: var(--spacing-8);
   max-width: 500px;
   opacity: 0;
-  animation: slideInFromLeft 700ms ease-out 350ms forwards;
+  animation: slideInFromLeft 1000ms ease-out 450ms forwards;
 }
 
 @keyframes slideInFromLeft {
   from {
     opacity: 0;
-    transform: translateX(-2rem);
+    transform: translateX(-6rem);
   }
   to {
     opacity: 1;
