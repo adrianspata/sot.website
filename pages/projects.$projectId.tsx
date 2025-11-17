@@ -64,8 +64,20 @@ const projectsData: ProjectDetail[] = [
         alt: "03",
       },
       {
-        src: "/images/SOT__4.webp",
+        src: "/images/sot_scan5.webp",
         alt: "04",
+      },
+      {
+        src: "/images/SOT__4.webp",
+        alt: "05",
+      },
+      {
+        src: "/images/SOT__6.webp",
+        alt: "06",
+      },
+      {
+        src: "/images/sot_scan2.webp",
+        alt: "07",
       },
     ],
   },
