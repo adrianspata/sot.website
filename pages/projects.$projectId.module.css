@@ -143,12 +143,12 @@ iframe.media {
 .gallery {
   width: 90%;
   display: flex;
-  flex-direction: column;
-  gap: var(--spacing-6);
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .image {
-  width: 100%;
+  width: calc(50% - 0.5rem);
   height: auto;
   object-fit: cover;
   background-color: var(--muted);
@@ -238,8 +238,8 @@ iframe.media {
   .gallery {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    gap: var(--spacing-2);
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
   .notFoundTitle {

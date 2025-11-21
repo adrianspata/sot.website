@@ -15,7 +15,7 @@ const AboutPage = () => {
         </div>
         <div className={styles.rightPanel}>
           <p className={styles.text}>
-            Founded in 2020, SOT at its core is a lifestyle label rooted in research and defined by shifting ideas. We explore the intersection of contemporary design, functional aesthetics, and thoughtful materiality.
+            Founded in 2023, SOT at its core is a lifestyle label rooted in research and defined by shifting ideas. We explore the intersection of contemporary design, functional aesthetics, and thoughtful materiality.
           </p>
           <p className={styles.text}>
             Each collection reflects a commitment to authenticity and restraint. We believe in creating pieces that transcend trends, focusing instead on timeless quality and purposeful design that resonates with the modern individual.

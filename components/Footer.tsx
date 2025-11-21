@@ -116,7 +116,7 @@ export const Footer = () => {
             </button>
             {status === "success" ? (
               <div className={styles.thankYouMessage}>
-                THANK YOU, BUT NO DISCOUNTS THOUGH
+                THANK YOU, NO DISCOUNTS THOUGH
               </div>
             ) : (
               <form
@@ -175,7 +175,7 @@ export const Footer = () => {
           <div className={styles.mobileNewsletterHeading}>NEWSLETTER</div>
           {mobileStatus === "success" ? (
             <div className={styles.mobileThankYouMessage}>
-              THANK YOU, BUT NO DISCOUNTS THOUGH
+              THANK YOU, NO DISCOUNTS THOUGH
             </div>
           ) : (
             <form
