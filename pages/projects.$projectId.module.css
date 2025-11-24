@@ -35,14 +35,15 @@
   font-size: 0.6rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #777;
+  color: #000;
   text-decoration: none;
   transition: opacity var(--animation-duration-fast) ease;
   mix-blend-mode: difference;
 }
 
 .navLink:hover {
-  opacity: 0.7;
+  text-transform: lowercase;
+  font-size: 0.6rem;
 }
 
 .contentWrapper {
@@ -92,6 +93,7 @@
 }
 
 .description {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.7rem;
   line-height: 1.6;
   font-weight: 400;
@@ -103,6 +105,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-1);
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.7rem;
   line-height: 1.5;
   text-transform: none;
@@ -167,19 +170,21 @@ iframe.media {
 }
 
 .notFoundTitle {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   color: var(--foreground);
+  margin-bottom: 1rem;
 }
 
 .backLink {
   font-size: 0.7rem;
+  font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 0.1em;
   color: var(--foreground);
   text-decoration: none;
   border-bottom: 0.9px solid var(--foreground);
-  padding-bottom: var(--spacing-1);
   transition:
     color var(--animation-duration-fast),
     border-color var(--animation-duration-fast);
@@ -187,8 +192,7 @@ iframe.media {
 }
 
 .backLink:hover {
-  color: var(--muted-foreground);
-  border-color: var(--muted-foreground);
+  text-transform: lowercase;
 }
 
 /* Mobile Styles */

@@ -57,11 +57,14 @@
   text-transform: uppercase;
   color: #000000;
   cursor: pointer;
-  transition: color var(--animation-duration-fast) ease;
+  transition: text-transform var(--animation-duration-fast) ease;
+  width: 6rem;
+  text-align: center;
+  display: inline-block;
 }
 
 .newsletterButton:hover {
-  color: #c19a6b;
+  text-transform: lowercase;
 }
 
 .signupForm {

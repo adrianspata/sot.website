@@ -25,7 +25,7 @@
   flex-direction: column;
   width: 100%;
   text-decoration: none;
-  transition: transform var(--animation-duration-normal) ease;
+  transition: transform var(--animation-duration-normal);
   cursor: pointer;
   position: relative;
 }
@@ -46,7 +46,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: opacity var(--animation-duration-normal) ease;
+  transition: opacity var(--animation-duration-normal);
 }
 
 .textContainer {
@@ -55,7 +55,7 @@
   gap: var(--spacing-2);
   margin-top: var(--spacing-4);
   opacity: 0;
-  transition: opacity var(--animation-duration-normal) ease;
+  transition: opacity var(--animation-duration-normal);
 }
 
 .projectItem:hover .textContainer {

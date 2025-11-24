@@ -111,6 +111,7 @@ export const Footer = () => {
             <button
               onClick={handleNewsletterClick}
               className={styles.newsletterButton}
+              data-newsletter-button
             >
               NEWSLETTER
             </button>
@@ -122,6 +123,7 @@ export const Footer = () => {
               <form
                 className={`${styles.signupForm} ${isFormVisible ? styles.visible : ""}`}
                 onSubmit={handleSubmit}
+                data-newsletter-form
               >
                 <Input
                   id="email-input"

@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@900&display=swap");
+
+.pageContainer {
+  width: 100%;
+  min-height: calc(100vh - 60px);
+  background-color: #ffffff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--spacing-8);
+  padding-top: 1.5rem;
+  font-family: "Helvetica Neue", var(--font-family-base);
+  margin-top: 0;
+}
+
+.contentWrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  height: 80vh;
+  min-height: 600px;
+}
+
+.leftSection {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-right: var(--spacing-8);
+}
+
+.shopImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  margin: 0 auto;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rightSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: var(--spacing-12);
+  gap: var(--spacing-16);
+  padding-top: 13rem;
+}
+
+.logoImg {
+  height: 12rem;
+  width: auto;
+  display: block;
+  transition: opacity var(--animation-duration-fast) ease;
+}
+
+.messageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.message {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: #000000;
+  text-transform: uppercase;
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+.newsletterLink {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.newsletterLink:hover {
+  text-decoration: underline;
+  color: #c19a6b;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: var(--spacing-4);
+    margin-top: 2rem;
+  }
+
+  .contentWrapper {
+    flex-direction: column;
+    height: auto;
+    min-height: auto;
+    gap: var(--spacing-6);
+  }
+
+  .leftSection {
+    flex: none;
+    height: auto;
+    padding-right: 0;
+    padding: 0 var(--spacing-16);
+    margin-bottom: 2rem;
+  }
+
+  .shopImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .rightSection {
+    flex: none;
+    padding-left: 0;
+    padding-top: 0;
+    gap: var(--spacing-10);
+    padding: 0 var(--spacing-6);
+  }
+
+  .logoImg {
+    height: 3rem;
+  }
+
+  .message {
+    margin-top: 2rem;
+    font-size: 0.7rem;
+    max-width: 400px;
+    line-height: 1.5;
+  }
+}

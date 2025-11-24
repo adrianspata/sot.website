@@ -51,7 +51,7 @@ export const Header = () => {
     <>
       <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
         <div className={styles.logo}>
-          <Link to="/">
+          <Link to="/" onClick={closeMobileMenu}>
             <img 
               src="/images/sotLogoSingle.png" 
               alt="SOT Logo"
@@ -62,6 +62,7 @@ export const Header = () => {
         
         {/* Desktop Navigation */}
         <nav className={styles.nav}>
+          <NavLink to="/shop" className={({ isActive }) => isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink} end>SHOP</NavLink>
           <NavLink to="/projects" className={({ isActive }) => isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink} end>PROJECTS</NavLink>
           <NavLink to="/about" className={({ isActive }) => isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink} end>ABOUT</NavLink>
           <NavLink to="/contact" className={({ isActive }) => isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink} end>CONTACT</NavLink>
@@ -80,6 +81,14 @@ export const Header = () => {
       {/* Mobile Menu Overlay */}
       <div className={`${styles.mobileMenuOverlay} ${isMobileMenuOpen ? styles.mobileMenuOverlayOpen : ''}`}>
           <nav className={styles.mobileNav}>
+            <NavLink 
+              to="/shop" 
+              className={({ isActive }) => isActive ? `${styles.mobileNavLink} ${styles.mobileNavLinkActive}` : styles.mobileNavLink}
+              onClick={closeMobileMenu}
+              end
+            >
+              SHOP
+            </NavLink>
             <NavLink 
               to="/projects" 
               className={({ isActive }) => isActive ? `${styles.mobileNavLink} ${styles.mobileNavLinkActive}` : styles.mobileNavLink}

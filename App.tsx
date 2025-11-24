@@ -11,6 +11,10 @@ import Page_3 from "./pages/projects.tsx";
 import PageLayout_3 from "./pages/projects.pageLayout.tsx";
 import Page_4 from "./pages/projects.$projectId.tsx";
 import PageLayout_4 from "./pages/projects.$projectId.pageLayout.tsx";
+import Page_5 from "./pages/shop.tsx";
+import PageLayout_5 from "./pages/shop.pageLayout.tsx";
+import Page_6 from "./pages/notFound.tsx";
+import PageLayout_6 from "./pages/notFound.pageLayout.tsx";
 
 if (!window.requestIdleCallback) {
   window.requestIdleCallback = (cb) => {
@@ -20,13 +24,15 @@ if (!window.requestIdleCallback) {
 
 import "./base.css";
 
-const fileNameToRoute = new Map([["./pages/about.tsx","/about"],["./pages/_index.tsx","/"],["./pages/contact.tsx","/contact"],["./pages/projects.tsx","/projects"],["./pages/projects.$projectId.tsx","/projects/:projectId"]]);
+const fileNameToRoute = new Map([["./pages/about.tsx","/about"],["./pages/_index.tsx","/"],["./pages/contact.tsx","/contact"],["./pages/projects.tsx","/projects"],["./pages/projects.$projectId.tsx","/projects/:projectId"],["./pages/shop.tsx","/shop"],["./pages/notFound.tsx","*"]]);
 const fileNameToComponent = new Map([
     ["./pages/about.tsx", Page_0],
 ["./pages/_index.tsx", Page_1],
 ["./pages/contact.tsx", Page_2],
 ["./pages/projects.tsx", Page_3],
 ["./pages/projects.$projectId.tsx", Page_4],
+["./pages/shop.tsx", Page_5],
+["./pages/notFound.tsx", Page_6],
   ]);
 
 function makePageRoute(filename: string) {
@@ -92,16 +98,6 @@ function buildLayoutTrie(layouts: {
   return result;
 }
 
-function NotFound() {
-  return (
-    <div>
-      <h1>Not Found</h1>
-      <p>The page you are looking for does not exist.</p>
-      <p>Go back to the <a href="/" style={{ color: 'blue' }}>home page</a>.</p>
-    </div>
-  );
-}
-
 export function App() {
   return (
     <BrowserRouter>
@@ -113,8 +109,9 @@ export function App() {
 "./pages/contact.tsx": PageLayout_2,
 "./pages/projects.tsx": PageLayout_3,
 "./pages/projects.$projectId.tsx": PageLayout_4,
+"./pages/shop.tsx": PageLayout_5,
+"./pages/notFound.tsx": PageLayout_6,
 }), fileNameToRoute, makePageRoute })} 
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </GlobalContextProviders>
     </BrowserRouter>

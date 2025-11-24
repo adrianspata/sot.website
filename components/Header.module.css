@@ -52,15 +52,19 @@
   font-size: 0.7rem;
   letter-spacing: 0.05em;
   text-decoration: none;
-  transition: color var(--animation-duration-fast) ease;
+  transition: text-transform var(--animation-duration-fast) ease;
   text-transform: uppercase;
+  width: 4.5rem;
+  text-align: center;
+  display: inline-block;
 }
 
 .navLink:hover {
-  color: #c19a6b;
+  text-transform: lowercase;
 }
 
 .navLinkActive {
+  text-transform: lowercase;
   text-decoration: underline;
 }
 
@@ -81,11 +85,11 @@
   text-transform: uppercase;
   cursor: pointer;
   padding: 0;
-  transition: color var(--animation-duration-fast) ease;
+  transition: text-transform var(--animation-duration-fast) ease;
 }
 
 .mobileMenuButton:hover {
-  color: #c19a6b;
+  text-transform: lowercase;
 }
 
 /* Mobile Menu Overlay */
@@ -130,12 +134,12 @@
     font-size: 0.875rem;
   letter-spacing: 0.1em;
   text-decoration: none;
-  transition: color var(--animation-duration-fast) ease;
+  transition: text-transform var(--animation-duration-fast) ease;
   text-transform: uppercase;
 }
 
 .mobileNavLink:hover {
-  color: #c19a6b;
+  text-transform: lowercase;
 }
 
 .mobileNavLinkActive {
