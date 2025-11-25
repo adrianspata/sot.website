@@ -8,24 +8,22 @@
   height: 60px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  background-color: transparent;
   padding: 0 var(--spacing-8);
-  background-color: #ffffff;
   z-index: var(--z-nav-sticky);
   font-size: 0.625rem;
   letter-spacing: 0.1em;
-  transition: background-color var(--animation-duration-normal) absolute;
 }
 
 .header.scrolled {
   background-color: transparent;
-  border-bottom: 1px solid transparent;
 }
 
 .logo {
   font-weight: 500;
   display: flex;
   align-items: center;
+  margin-right: 1rem;
 }
 
 .logoImg {
@@ -35,9 +33,38 @@
   transition: opacity var(--animation-duration-fast) ease;
 }
 
+.leftNav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-right: auto;
+}
+
+.leftNav .navLink {
+  padding: .5rem;
+  text-align: center;
+}
+
+.rightNav {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+}
+
+.rightNav .navLink {
+  padding: .5rem;
+  text-align: center;
+}
+
+.rightNav .cartButton {
+  width: 4rem;
+  padding: .5rem;
+  text-align: center;
+}
+
 .nav {
   display: flex;
-  gap: var(--spacing-8);
+  gap: .5rem;
   align-items: center;
 }
 
@@ -54,9 +81,9 @@
   text-decoration: none;
   transition: text-transform var(--animation-duration-fast) ease;
   text-transform: uppercase;
-  width: 4.5rem;
-  text-align: center;
   display: inline-block;
+  white-space: nowrap;
+  width: 5rem;
 }
 
 .navLink:hover {
@@ -64,8 +91,37 @@
 }
 
 .navLinkActive {
-  text-transform: lowercase;
   text-decoration: underline;
+  text-transform: lowercase;
+}
+
+.cartButton {
+  background: none;
+  border: none;
+  color: #000000;
+  font-family:
+    "Work Sans",
+    "Helvetica Neue",
+    Arial Black,
+    sans-serif;
+  font-weight: 900;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: text-transform var(--animation-duration-fast) ease;
+  text-transform: uppercase;
+  display: inline-block;
+  cursor: pointer;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.cartButton:hover {
+  text-transform: lowercase;
+}
+
+.cartCount {
+  color: #000000;
 }
 
 /* Mobile Menu Button */
@@ -153,13 +209,16 @@
   }
 
   /* Hide desktop nav on mobile */
-  .nav {
+  .nav,
+  .leftNav,
+  .rightNav {
     display: none;
   }
 
   /* Show mobile menu button */
   .mobileMenuButton {
     display: block;
+    margin-left: auto;
   }
 
   /* Show mobile menu overlay when active */

@@ -1,17 +1,32 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-// Currency selector - commented out for now, uncomment when adding products
-// import { CurrencySelector } from "./CurrencySelector";
+import { CartItem } from "../App";
+import { Cart } from "./Cart";
 import styles from "./Header.module.css";
 
-export const Header = () => {
+interface HeaderProps {
+  cartItems?: CartItem[];
+}
+
+export const Header: React.FC<HeaderProps> = ({ cartItems = [] }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  
+  const cartItemsCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 0);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollPosition = window.scrollY;
+          setIsScrolled(scrollPosition > 10); // Add 10px threshold to reduce sensitivity
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     // Set initial state
@@ -43,6 +58,10 @@ export const Header = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
+
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
@@ -60,12 +79,22 @@ export const Header = () => {
           </Link>
         </div>
         
-        {/* Desktop Navigation */}
-        <nav className={styles.nav}>
+        {/* Left Navigation (near logo) */}
+        <nav className={styles.leftNav}>
           <NavLink to="/shop" className={({ isActive }) => isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink} end>SHOP</NavLink>
           <NavLink to="/projects" className={({ isActive }) => isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink} end>PROJECTS</NavLink>
+        </nav>
+        
+        {/* Right Navigation */}
+        <nav className={styles.rightNav}>
           <NavLink to="/about" className={({ isActive }) => isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink} end>ABOUT</NavLink>
           <NavLink to="/contact" className={({ isActive }) => isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink} end>CONTACT</NavLink>
+          <button 
+            onClick={toggleCart}
+            className={styles.cartButton}
+          >
+            CART {cartItemsCount > 0 && <span className={styles.cartCount}>({cartItemsCount})</span>}
+          </button>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -119,6 +148,12 @@ export const Header = () => {
             <CurrencySelector className={styles.mobileCurrencySelector} />
           </div> */}
       </div>
+      
+      {/* Cart Modal */}
+      <Cart 
+        isOpen={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
+      />
     </>
   );
 };

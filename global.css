@@ -36,7 +36,7 @@
 
 :root {
   /* Light Mode */
-  --background: hsl(0 0% 98%);
+  --background: hsl(0, 0%, 100%);
   --foreground: hsl(0 0% 9%);
 
   --surface: hsl(0 0% 100%);

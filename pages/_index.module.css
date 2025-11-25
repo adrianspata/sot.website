@@ -1,3 +1,7 @@
+body {
+  background-color: #fff;
+}
+
 .pageContainer {
   display: flex;
   flex-direction: column;
@@ -28,7 +32,7 @@
 }
 
 .heroImage {
-  max-width: 35%;
+  max-width: 40%;
   height: auto;
   object-fit: contain;
   object-position: center;

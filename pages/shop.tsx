@@ -1,8 +1,12 @@
 import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
 import styles from "./shop.module.css";
+import { ProductList } from "../components/ProductList";
 
 const ShopPage = () => {
+  // Toggle this to switch between closed store and product listing
+  const isStoreOpen = false; // false = closed shop, true = open shop
+
   const handleNewsletterClick = (e: React.MouseEvent) => {
     e.preventDefault();
     
@@ -28,6 +32,20 @@ const ShopPage = () => {
     }
   };
 
+  if (isStoreOpen) {
+    return (
+      <>
+        {/*<Helmet>
+          <title>SOT | Shop</title>
+          <meta name="description" content="SOT Shop - Premium incense and lifestyle products" />
+        </Helmet>*/}
+        <div className={styles.pageContainer}>
+          <ProductList />
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
       {/*<Helmet>
@@ -38,7 +56,7 @@ const ShopPage = () => {
         <div className={styles.contentWrapper}>
           <div className={styles.leftSection}>
             <img
-              src="/images/sot_scan4.webp"
+              src="/images/sot_scan4.5x7.webp"
               alt="SOT Shop"
               className={styles.shopImage}
             />
