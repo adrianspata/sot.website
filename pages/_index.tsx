@@ -28,6 +28,27 @@ const ResponsiveHeroImage = ({ desktopSrc, mobileSrc, alt, linkTo }: { desktopSr
 };
 
 const HomePage = () => {
+  const heroImages = [
+    {
+      desktopSrc: "/images/SOT_5.2.webp",
+      mobileSrc: "/images/SOT_5.2.webp",
+      alt: "Max elevator",
+      linkTo: "/projects/sot-07"
+    }
+  ];
+
+  const [heroIndex, setHeroIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    // Byt till nästa bild vid varje reload
+    const lastIndex = Number(localStorage.getItem('heroIndex')) || 0;
+    const nextIndex = (lastIndex + 1) % heroImages.length;
+    setHeroIndex(nextIndex);
+    localStorage.setItem('heroIndex', String(nextIndex));
+  }, []);
+
+  const selectedHero = heroImages[heroIndex];
+
   return (
     <>
       {/* <Helmet>
@@ -51,10 +72,10 @@ const HomePage = () => {
 
 <section className={styles.heroSection}> 
   <ResponsiveHeroImage 
-    desktopSrc="/images/SOT_5.2.webp" 
-    mobileSrc="/images/SOT_5.2.webp" 
-    alt="Max elevator"
-    linkTo="/projects/sot-07"
+    desktopSrc={selectedHero.desktopSrc}
+    mobileSrc={selectedHero.mobileSrc}
+    alt={selectedHero.alt}
+    linkTo={selectedHero.linkTo}
   />
 </section>
 

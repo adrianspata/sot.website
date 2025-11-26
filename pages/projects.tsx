@@ -39,7 +39,7 @@ const projects = [
   },
   {
     id: "sot-020",
-    src: "/images/P11205732.webp",
+    src: "/images/witwty-thumbnail.webp",
     alt: "sot-03",
     title: "What Is The World To You?",
     description: "A short evocative visual.",

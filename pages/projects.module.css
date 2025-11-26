@@ -14,9 +14,9 @@
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 2rem;
   max-width: 100%;
-  padding: 0 var(--spacing-8);
+  padding: 2rem;
 }
 
 .projectItem {
@@ -29,13 +29,9 @@
   position: relative;
 }
 
-.projectItem:hover .image {
-  opacity: 0.7;
-}
-
 .imageWrapper {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 5 / 4;
   overflow: hidden;
   background-color: var(--muted);
 }
@@ -115,9 +111,9 @@
   }
 
   .gridContainer {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: var(--spacing-4);
-    padding: 0 var(--spacing-4);
+    padding: 2rem;
   }
 
   .textContainer {

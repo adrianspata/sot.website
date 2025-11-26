@@ -32,7 +32,7 @@ body {
 }
 
 .heroImage {
-  max-width: 40%;
+  max-width: 65vh;
   height: auto;
   object-fit: contain;
   object-position: center;

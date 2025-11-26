@@ -212,10 +212,6 @@ const projectsData: ProjectDetail[] = [
       },
     ],
     images: [
-      {
-        src: "/images/P11205732.webp",
-        alt: "02",
-      },
     ],
   },
   {
@@ -307,6 +303,37 @@ const projectsData: ProjectDetail[] = [
 const ProjectDetailPage = () => {
   const { projectId } = useParams<{ projectId: string }>();
   const project = projectsData.find((p) => p.id === projectId);
+
+  const [selectedImageIndex, setSelectedImageIndex] = React.useState(0);
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+  // ESC key closes modal, arrow keys navigate images
+  React.useEffect(() => {
+    if (!project) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isModalOpen) {
+        setIsModalOpen(false);
+      }
+      if (isModalOpen && project.images.length > 1) {
+        if (e.key === 'ArrowRight') {
+          setSelectedImageIndex((prev) => (prev + 1) % project.images.length);
+        }
+        if (e.key === 'ArrowLeft') {
+          setSelectedImageIndex((prev) => (prev - 1 + project.images.length) % project.images.length);
+        }
+      }
+    };
+    if (isModalOpen) {
+      document.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isModalOpen, project]);
 
   // Calculate navigation IDs
   const { currentIndex, previousProjectId, nextProjectId } = useMemo(() => {
@@ -426,9 +453,35 @@ const ProjectDetailPage = () => {
                 src={image.src}
                 alt={image.alt}
                 className={styles.image}
+                onClick={() => {
+                  setSelectedImageIndex(index);
+                  setIsModalOpen(true);
+                }}
+                style={{ cursor: 'zoom-in' }}
               />
             ))}
           </section>
+
+      {/* Image Modal */}
+      {isModalOpen && (
+        <div className={styles.imageModal} onClick={() => setIsModalOpen(false)}>
+          <button 
+            className={styles.modalClose}
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsModalOpen(false);
+            }}
+          >
+            ×
+          </button>
+          <img 
+            src={project.images[selectedImageIndex].src} 
+            alt={project.images[selectedImageIndex].alt}
+            className={styles.modalImage}
+            onClick={() => setIsModalOpen(false)}
+          />
+        </div>
+      )}
         </article>
       </div>
     </>
