@@ -60,9 +60,8 @@
 .title {
   font-size: 0.75rem;
   font-family:
-    "Work Sans",
     "Helvetica Neue",
-    Arial Black,
+    Arial,
     sans-serif;
   font-weight: 900;
   letter-spacing: 0.1em;
@@ -75,7 +74,10 @@
   font-size: 0.7rem;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  font-family: var(--font-family-base);
+  font-family:
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   font-weight: 400;
   color: var(--foreground);
   text-transform: none;

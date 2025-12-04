@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@900&display=swap");
+/* Helvetica Neue is loaded in global.css */
 
 .header {
   position: fixed;
@@ -71,11 +71,10 @@
 .navLink {
   color: #000000;
   font-family:
-    "Work Sans",
     "Helvetica Neue",
-    Arial Black,
+    Arial,
     sans-serif;
-  font-weight: 900;
+  font-weight: 500;
   font-size: 0.7rem;
   letter-spacing: 0.05em;
   text-decoration: none;
@@ -100,11 +99,10 @@
   border: none;
   color: #000000;
   font-family:
-    "Work Sans",
     "Helvetica Neue",
-    Arial Black,
+    Arial,
     sans-serif;
-  font-weight: 900;
+  font-weight: 500;
   font-size: 0.7rem;
   letter-spacing: 0.05em;
   text-decoration: none;
@@ -131,11 +129,10 @@
   border: none;
   color: #000000;
   font-family:
-    "Work Sans",
     "Helvetica Neue",
-    Arial Black,
+    Arial,
     sans-serif;
-  font-weight: 900;
+  font-weight: 500;
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -182,11 +179,10 @@
 .mobileNavLink {
   color: #000000;
   font-family:
-    "Work Sans",
     "Helvetica Neue",
-    Arial Black,
+    Arial,
     sans-serif;
-  font-weight: 900;
+  font-weight: 500;
     font-size: 0.875rem;
   letter-spacing: 0.1em;
   text-decoration: none;

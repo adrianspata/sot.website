@@ -48,9 +48,8 @@
 
 .cartTitle {
   font-family:
-    "Work Sans",
     "Helvetica Neue",
-    Arial Black,
+    Arial,
     sans-serif;
   font-weight: 900;
   font-size: 0.9rem;
@@ -90,9 +89,8 @@
 
 .emptyMessage {
   font-family:
-    "Work Sans",
     "Helvetica Neue",
-    Arial Black,
+    Arial,
     sans-serif;
   font-weight: 900;
   font-size: 0.7rem;

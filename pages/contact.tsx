@@ -28,16 +28,18 @@ const ContactPage = () => {
           </div>
 
           <div className={styles.section}>
-            <h3 className={styles.sectionHeading}>Social</h3>
+            <div className={styles.subsection}>
+              <h3 className={styles.subsectionTitle}>Social</h3>
 
-            <a
-              href="https://www.instagram.com/sotstockholm"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.contactLink}
-            >
-              @sotstockholm
-            </a>
+              <a
+                href="https://www.instagram.com/sotstockholm"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.contactLink}
+              >
+                @sotstockholm
+              </a>
+            </div>
           </div>
         </div>
       </div>

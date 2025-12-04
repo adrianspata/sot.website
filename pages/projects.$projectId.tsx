@@ -378,7 +378,7 @@ const ProjectDetailPage = () => {
         <nav className={styles.navigation}>
           {currentIndex === 0 ? (
             <Link to="/projects" className={styles.navLink}>
-              &lt; see all
+              see all
             </Link>
           ) : (
             previousProjectId && (
@@ -386,13 +386,13 @@ const ProjectDetailPage = () => {
                 to={`/projects/${previousProjectId}`}
                 className={styles.navLink}
               >
-                &lt; previous
+                previous
               </Link>
             )
           )}
           {nextProjectId && (
             <Link to={`/projects/${nextProjectId}`} className={styles.navLink}>
-              next &gt;
+              next
             </Link>
           )}
         </nav>

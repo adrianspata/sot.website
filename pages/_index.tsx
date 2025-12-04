@@ -4,50 +4,101 @@ import { Helmet } from "@dr.pogodin/react-helmet";
 import { HorizontalImageGallery } from "../components/HorizontalImageGallery";
 import styles from "./_index.module.css";
 
-const ResponsiveHeroImage = ({ desktopSrc, mobileSrc, alt, linkTo }: { desktopSrc: string; mobileSrc?: string; alt: string; linkTo: string }) => {
+type HeroOption = {
+  type: 'video' | 'image';
+  src: string;
+  poster?: string;
+  alt: string;
+  linkTo: string;
+};
+
+type DeviceType = 'desktop' | 'mobile';
+
+const Hero = ({ hero, device }: { hero: HeroOption; device: DeviceType }) => {
+  const className = hero.type === 'video' 
+    ? (device === 'mobile' ? styles.heroVideoMobile : styles.heroVideoDesktop)
+    : (device === 'mobile' ? styles.heroImageMobile : styles.heroImageDesktop);
+
   return (
-    <>
-      {mobileSrc && (
-        <Link to={linkTo} className={styles.heroLink}>
-          <img 
-            src={mobileSrc} 
-            alt={alt} 
-            className={styles.heroImageMobile} 
-          />
-        </Link>
-      )}
-      <Link to={linkTo} className={styles.heroLink}>
-        <img 
-          src={desktopSrc} 
-          alt={alt} 
-          className={styles.heroImage} 
+    <Link to={hero.linkTo} className={styles.heroLink}>
+      {hero.type === 'video' ? (
+        <video
+          className={className}
+          src={hero.src}
+          poster={hero.poster}
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-label={hero.alt}
         />
-      </Link>
-    </>
+      ) : (
+        <img src={hero.src} alt={hero.alt} className={className} />
+      )}
+    </Link>
   );
 };
 
-const HomePage = () => {
-  const heroImages = [
-    {
-      desktopSrc: "/images/SOT_5.2.webp",
-      mobileSrc: "/images/SOT_5.2.webp",
-      alt: "Max elevator",
-      linkTo: "/projects/sot-07"
-    }
-  ];
 
+const HomePage = () => {
+  // Configure hero options for each device
+  const heroItems: Record<DeviceType, HeroOption[]> = {
+    desktop: [
+      {
+        type: 'video',
+        src: '/videos/mixedHeroWhiteee.mp4',
+        poster: '/images/louiseBW6.webp',
+        alt: 'Desktop video hero',
+        linkTo: '/projects',
+      },
+      {
+        type: 'image',
+        src: '/images/louiseBW6.webp',
+        alt: 'Desktop image hero',
+        linkTo: '/projects',
+      }
+    ],
+    mobile: [
+      // {
+      //   type: 'video',
+      //   src: '/videos/mixedHeroWhiteee.mp4',
+      //   poster: '/images/mobileHeroPoster.webp',
+      //   alt: 'Mobile video hero',
+      //   linkTo: '/projects',
+      // },
+      {
+        type: 'image',
+        src: '/images/louiseBW6.webp',
+        alt: 'Mobile image hero',
+        linkTo: '/projects',
+      }
+    ]
+  };
+
+  const getDeviceType = (): DeviceType => {
+    return window.matchMedia('(max-width: 768px)').matches ? 'mobile' : 'desktop';
+  };
+
+  const [deviceType, setDeviceType] = React.useState<DeviceType>(getDeviceType());
   const [heroIndex, setHeroIndex] = React.useState(0);
 
+  // Handle device resize
   React.useEffect(() => {
-    // Byt till nästa bild vid varje reload
-    const lastIndex = Number(localStorage.getItem('heroIndex')) || 0;
-    const nextIndex = (lastIndex + 1) % heroImages.length;
-    setHeroIndex(nextIndex);
-    localStorage.setItem('heroIndex', String(nextIndex));
+    const handleResize = () => setDeviceType(getDeviceType());
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const selectedHero = heroImages[heroIndex];
+  // Rotate hero on page reload for current device
+  React.useEffect(() => {
+    const storageKey = `heroIndex_${deviceType}`;
+    const lastIndex = Number(localStorage.getItem(storageKey)) || 0;
+    const nextIndex = (lastIndex + 1) % heroItems[deviceType].length;
+    setHeroIndex(nextIndex);
+    localStorage.setItem(storageKey, String(nextIndex));
+  }, [deviceType]);
+
+  const selectedHero = heroItems[deviceType][heroIndex];
 
   return (
     <>
@@ -56,29 +107,9 @@ const HomePage = () => {
         <meta name="description" content="SOT STOCKHOLM" />
       </Helmet> */}
       <div className={styles.pageContainer}>
-        {/*<section className={styles.heroSection}>
-        <Link to="/projects/sot-07" className={styles.heroLink} aria-label="Projects">
-    <video
-      className={styles.heroImage}
-      src="/videos/TheHandOverOpening.mp4"
-      poster="/images/SOT_5.webp"
-      autoPlay
-      muted
-      loop
-      playsInline
-    />
-  </Link>
-</section>*/}
-
-<section className={styles.heroSection}> 
-  <ResponsiveHeroImage 
-    desktopSrc={selectedHero.desktopSrc}
-    mobileSrc={selectedHero.mobileSrc}
-    alt={selectedHero.alt}
-    linkTo={selectedHero.linkTo}
-  />
-</section>
-
+        <section className={styles.heroSection}>
+          <Hero hero={selectedHero} device={deviceType} />
+        </section>
         <section className={styles.gallerySection}>
           <HorizontalImageGallery images={homeImages} />
         </section>
