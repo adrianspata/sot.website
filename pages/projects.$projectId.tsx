@@ -25,7 +25,7 @@ interface ProjectDetail {
 
 const projectsData: ProjectDetail[] = [
   {
-    id: "sot-07",
+    id: "the-hand-over",
     title: "THE HAND OVER",
     date: "31 / 05 / 2025",
     fullDescription:
@@ -82,7 +82,7 @@ const projectsData: ProjectDetail[] = [
     ],
   },
   {
-    id: "sot-05",
+    id: "louis-wood",
     title: "Louis Wood for SOT",
     date: "07 / 08 / 2024",
     fullDescription:
@@ -115,7 +115,7 @@ const projectsData: ProjectDetail[] = [
     ],
   },
   {
-    id: "sot-04",
+    id: "incense-collection-2024",
     title: "Incense Collection 2024",
     date: "24 / 07 / 2024",
     fullDescription:
@@ -141,7 +141,7 @@ const projectsData: ProjectDetail[] = [
     ],
   },
   {
-    id: "sot-03",
+    id: "has-been-shipped",
     title: "Your order has been shipped",
     date: "15 / 07 / 2024",
     fullDescription:
@@ -184,7 +184,7 @@ const projectsData: ProjectDetail[] = [
     ],
   },
   {
-    id: "sot-020",
+    id: "what-is-the-world-to-you",
     title: "What Is The World To You?",
     date: "12 / 06 / 2024",
     fullDescription:
@@ -215,7 +215,7 @@ const projectsData: ProjectDetail[] = [
     ],
   },
   {
-    id: "sot-02",
+    id: "launch-event",
     title: "SOT Launch Event",
     date: "30 / 05 / 2024",
     fullDescription:
@@ -257,7 +257,7 @@ const projectsData: ProjectDetail[] = [
     ],
   },
   {
-    id: "sot-01",
+    id: "maya-nilsen",
     title: "Maya Nilsen",
     date: "30 / 04 / 2024",
     fullDescription:

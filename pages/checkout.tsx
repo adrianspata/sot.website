@@ -7,7 +7,7 @@ export default function CheckoutPage() {
   const { cartItems, clearCart } = useCart();
   
   const subtotal = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
-  const shipping = 150; // Fixed shipping cost
+  const shipping = 100; // Fixed shipping cost
   const tax = Math.round(subtotal * 0.25); // 25% VAT
   const total = subtotal + shipping + tax;
 
