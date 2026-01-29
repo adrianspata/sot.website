@@ -73,7 +73,7 @@ export const NewsletterPopup = () => {
             ) : (
                 <>
                     <h3 className={styles.title}>
-                        SUBSCRIBE FOR NEW PRODUCTS AND EARLY RELEASE INFO
+                        SUBSCRIBE FOR FIRST-HAND ACCESS TO NEW RELEASES AND UPDATES
                     </h3>
                     <form onSubmit={handleSubmit} className={styles.form}>
                         <div className={styles.inputGroup}>
