@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
+
 import { X } from "lucide-react";
 import { toast } from "sonner";
 import {
@@ -14,7 +14,14 @@ import {
 import { Input } from "./Input";
 import { Textarea } from "./Textarea";
 import { Button } from "./Button";
-import { schema, postContactSubmit } from "../endpoints/contact/submit_POST.schema";
+import { z } from "zod";
+
+const schema = z.object({
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email address"),
+  subject: z.string().optional(),
+  message: z.string().min(1, "Message is required"),
+});
 import styles from "./ContactFormDialog.module.css";
 
 type ContactFormValues = {
@@ -31,34 +38,47 @@ export const ContactFormDialog = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  
+
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     reset,
   } = useForm<ContactFormValues>({
     resolver: zodResolver(schema),
   });
 
-  const mutation = useMutation({
-    mutationFn: postContactSubmit,
-    onSuccess: (data) => {
-      console.log("Form submitted successfully:", data);
-      setIsSuccess(true);
-    },
-    onError: (error) => {
+
+  const onSubmit: SubmitHandler<ContactFormValues> = async (data) => {
+    try {
+      const formData = new FormData();
+      formData.append("access_key", "f81772b5-0faf-47d3-850f-e33f2b72e7ca");
+      formData.append("name", data.name);
+      formData.append("email", data.email);
+      formData.append("subject", data.subject || "Contact Form Submission");
+      formData.append("message", data.message);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const responseData = await response.json();
+
+      if (responseData.success) {
+        console.log("Form submitted successfully:", responseData);
+        setIsSuccess(true);
+      } else {
+        throw new Error(responseData.message || "Submission failed");
+      }
+    } catch (error) {
       console.error("Form submission error:", error);
       if (error instanceof Error) {
         toast.error(error.message);
       } else {
         toast.error("An unexpected error occurred. Please try again.");
       }
-    },
-  });
-
-  const onSubmit: SubmitHandler<ContactFormValues> = async (data) => {
-    mutation.mutate(data);
+    }
   };
 
   const handleClose = () => {
@@ -161,9 +181,9 @@ export const ContactFormDialog = ({
               <Button
                 type="submit"
                 className={styles.submitButton}
-                disabled={mutation.isPending}
+                disabled={isSubmitting}
               >
-                {mutation.isPending ? "SENDING..." : "SEND MAIL"}
+                {isSubmitting ? "SENDING..." : "SEND MAIL"}
               </Button>
             </form>
           </>
