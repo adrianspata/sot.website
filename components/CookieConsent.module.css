@@ -42,11 +42,17 @@
 }
 
 .bannerText {
-    font-size: 0.875rem;
+    font-size: 0.7rem;
     color: #333;
     line-height: 1.5;
     max-width: 800px;
     margin: 0;
+}
+
+.bannerButton {
+    font-size: 0.7rem !important;
+    height: auto !important;
+    padding: 0.5rem 1rem !important;
 }
 
 .bannerLink {
@@ -122,7 +128,7 @@
 
 .panelTitle {
     margin: 0;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -147,7 +153,7 @@
 }
 
 .sectionTitle {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     font-weight: 600;
     margin: 0 0 0.5rem 0;
     text-transform: uppercase;
@@ -157,14 +163,14 @@
 }
 
 .sectionDescription {
-    font-size: 0.875rem;
+    font-size: 0.7rem;
     color: #666;
     margin: 0;
     line-height: 1.5;
 }
 
 .alwaysActive {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     color: #000;
     opacity: 0.5;
     font-weight: 500;
@@ -183,6 +189,12 @@
 .footerGroup {
     display: flex;
     gap: 1rem;
+}
+
+.panelButton {
+    font-size: 0.7rem !important;
+    height: auto !important;
+    padding: 0.5rem 1rem !important;
 }
 
 @media (max-width: 640px) {

@@ -120,10 +120,10 @@ export const CookieConsent = () => {
                             You can manage your preferences at any time.
                         </p>
                         <div className={styles.bannerActions}>
-                            <Button variant="outline" onClick={openPanel}>
+                            <Button variant="outline" onClick={openPanel} className={styles.bannerButton}>
                                 PREFERENCES
                             </Button>
-                            <Button variant="primary" onClick={handleAcceptAll}>
+                            <Button variant="primary" onClick={handleAcceptAll} className={styles.bannerButton}>
                                 ACCEPT ALL
                             </Button>
                         </div>
@@ -189,14 +189,14 @@ export const CookieConsent = () => {
 
                         <div className={styles.panelFooter}>
                             <div className={styles.footerGroup}>
-                                <Button variant="outline" onClick={handleRejectAll}>
+                                <Button variant="outline" onClick={handleRejectAll} className={styles.panelButton}>
                                     REJECT ALL
                                 </Button>
-                                <Button variant="outline" onClick={handleAcceptAll}>
+                                <Button variant="primary" onClick={handleAcceptAll} className={styles.panelButton}>
                                     ACCEPT ALL
                                 </Button>
                             </div>
-                            <Button variant="primary" onClick={handleSavePreferences} className={styles.saveButton}>
+                            <Button variant="primary" onClick={handleSavePreferences} className={`${styles.saveButton} ${styles.panelButton}`}>
                                 SAVE PREFERENCES
                             </Button>
                         </div>
