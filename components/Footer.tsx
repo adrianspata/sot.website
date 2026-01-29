@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
+import { submitToWeb3Forms } from "../helpers/newsletter";
 import { Input } from "./Input";
 import { Button } from "./Button";
 
@@ -47,35 +48,7 @@ export const Footer = () => {
     setIsFormVisible((prev) => !prev);
   };
 
-  // Web3Forms submission handler
-  const submitToWeb3Forms = async (emailToSubmit: string): Promise<void> => {
-    const formData = new FormData();
-    formData.append("access_key", "f81772b5-0faf-47d3-850f-e33f2b72e7ca");
-    formData.append("email", emailToSubmit);
-    formData.append("message", "Newsletter Signup"); // Helper field to give context in the dashboard
 
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        console.log(`Newsletter subscription successful for: ${emailToSubmit}`);
-      } else {
-        console.error("Web3Forms error:", data);
-        // Even if there's an error from Web3Forms (e.g. limit reached), 
-        // we might want to fail gracefully or still show success to the user 
-        // to avoid friction, but for now let's just log it.
-        throw new Error(data.message || "Submission failed");
-      }
-    } catch (error) {
-      console.error("Newsletter subscription error:", error);
-      throw error;
-    }
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

@@ -2,6 +2,7 @@ import React, { useState, createContext, useContext, ReactNode } from "react";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import { GlobalContextProviders } from "./components/_globalContextProviders";
 import { CookieConsent } from "./components/CookieConsent";
+import { NewsletterPopup } from "./components/NewsletterPopup";
 
 // Cart Types
 export interface CartItem {
@@ -211,6 +212,7 @@ export function App() {
             })}
           </Routes>
           <CookieConsent />
+          <NewsletterPopup />
         </CartProvider>
       </GlobalContextProviders>
     </BrowserRouter>

@@ -57,6 +57,7 @@ export const CookieConsent = () => {
 
         // Save to localStorage
         localStorage.setItem("cookie_consent", JSON.stringify(c));
+        window.dispatchEvent(new Event("cookie_consent_updated"));
     };
 
     const handleAcceptAll = () => {
