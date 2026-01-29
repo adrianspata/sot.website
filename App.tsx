@@ -1,6 +1,7 @@
 import React, { useState, createContext, useContext, ReactNode } from "react";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import { GlobalContextProviders } from "./components/_globalContextProviders";
+import { CookieConsent } from "./components/CookieConsent";
 
 // Cart Types
 export interface CartItem {
@@ -38,8 +39,8 @@ const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     setCartItems(prev => {
       const existingItem = prev.find(cartItem => cartItem.id === item.id && cartItem.size === item.size);
       if (existingItem) {
-        return prev.map(cartItem => 
-          cartItem.id === item.id && cartItem.size === item.size 
+        return prev.map(cartItem =>
+          cartItem.id === item.id && cartItem.size === item.size
             ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
             : cartItem
         );
@@ -107,24 +108,24 @@ import PageLayout_8 from "./pages/notFound.pageLayout.tsx";
 
 if (!window.requestIdleCallback) {
   window.requestIdleCallback = (cb) => {
-    setTimeout(cb, 1);
+    return setTimeout(cb, 1);
   };
 }
 
 import "./base.css";
 
-const fileNameToRoute = new Map([["./pages/about.tsx","/about"],["./pages/_index.tsx","/"],["./pages/contact.tsx","/contact"],["./pages/projects.tsx","/projects"],["./pages/projects.$projectId.tsx","/projects/:projectId"],["./pages/shop.tsx","/shop"],["./pages/shop.$productId.tsx","/shop/product/:productId"],["./pages/checkout.tsx","/checkout"],["./pages/notFound.tsx","*"]]);
+const fileNameToRoute = new Map([["./pages/about.tsx", "/about"], ["./pages/_index.tsx", "/"], ["./pages/contact.tsx", "/contact"], ["./pages/projects.tsx", "/projects"], ["./pages/projects.$projectId.tsx", "/projects/:projectId"], ["./pages/shop.tsx", "/shop"], ["./pages/shop.$productId.tsx", "/shop/product/:productId"], ["./pages/checkout.tsx", "/checkout"], ["./pages/notFound.tsx", "*"]]);
 const fileNameToComponent = new Map([
-    ["./pages/about.tsx", Page_0],
-["./pages/_index.tsx", Page_1],
-["./pages/contact.tsx", Page_2],
-["./pages/projects.tsx", Page_3],
-["./pages/projects.$projectId.tsx", Page_4],
-["./pages/shop.tsx", Page_5],
-["./pages/shop.$productId.tsx", Page_6],
-["./pages/checkout.tsx", Page_7],
-["./pages/notFound.tsx", Page_8],
-  ]);
+  ["./pages/about.tsx", Page_0],
+  ["./pages/_index.tsx", Page_1],
+  ["./pages/contact.tsx", Page_2],
+  ["./pages/projects.tsx", Page_3],
+  ["./pages/projects.$projectId.tsx", Page_4],
+  ["./pages/shop.tsx", Page_5],
+  ["./pages/shop.$productId.tsx", Page_6],
+  ["./pages/checkout.tsx", Page_7],
+  ["./pages/notFound.tsx", Page_8],
+]);
 
 function makePageRoute(filename: string) {
   const Component = fileNameToComponent.get(filename);
@@ -195,18 +196,21 @@ export function App() {
       <GlobalContextProviders>
         <CartProvider>
           <Routes>
-            {toElement({ trie: buildLayoutTrie({
-"./pages/about.tsx": PageLayout_0,
-"./pages/_index.tsx": PageLayout_1,
-"./pages/contact.tsx": PageLayout_2,
-"./pages/projects.tsx": PageLayout_3,
-"./pages/projects.$projectId.tsx": PageLayout_4,
-"./pages/shop.tsx": PageLayout_5,
-"./pages/shop.$productId.tsx": PageLayout_6,
-"./pages/checkout.tsx": PageLayout_7,
-"./pages/notFound.tsx": PageLayout_8,
-}), fileNameToRoute, makePageRoute })} 
+            {toElement({
+              trie: buildLayoutTrie({
+                "./pages/about.tsx": PageLayout_0,
+                "./pages/_index.tsx": PageLayout_1,
+                "./pages/contact.tsx": PageLayout_2,
+                "./pages/projects.tsx": PageLayout_3,
+                "./pages/projects.$projectId.tsx": PageLayout_4,
+                "./pages/shop.tsx": PageLayout_5,
+                "./pages/shop.$productId.tsx": PageLayout_6,
+                "./pages/checkout.tsx": PageLayout_7,
+                "./pages/notFound.tsx": PageLayout_8,
+              }), fileNameToRoute, makePageRoute
+            })}
           </Routes>
+          <CookieConsent />
         </CartProvider>
       </GlobalContextProviders>
     </BrowserRouter>
