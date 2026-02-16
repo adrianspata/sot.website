@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
-import styles from "./shop.module.css";
+import styles from "../styles/pages/shop.module.css";
 import { ProductList } from "../components/ProductList";
 
 const ShopPage = () => {
@@ -9,18 +9,18 @@ const ShopPage = () => {
 
   const handleNewsletterClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    
+
     // Scroll to footer
     const footer = document.querySelector('footer');
     if (footer) {
       footer.scrollIntoView({ behavior: 'smooth' });
-      
+
       // Wait a bit for scroll to complete, then check if newsletter form is visible
       setTimeout(() => {
         // Check if newsletter form is already visible by looking for the 'visible' class
         const newsletterForm = document.querySelector('[data-newsletter-form]');
         const isFormVisible = newsletterForm && newsletterForm.classList.contains('visible');
-        
+
         // Only trigger newsletter button if form is not visible
         if (!isFormVisible) {
           const newsletterButton = document.querySelector('[data-newsletter-button]') as HTMLButtonElement;
@@ -61,7 +61,7 @@ const ShopPage = () => {
               className={styles.shopImage}
             />
           </div>
-           <div className={styles.rightSection}>
+          <div className={styles.rightSection}>
             {/*<div className={styles.logo}>
               <Link to="/">
             <img 
