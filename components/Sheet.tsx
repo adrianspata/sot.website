@@ -3,7 +3,7 @@
 import * as React from "react"
 import * as SheetPrimitive from "@radix-ui/react-dialog"
 import { X } from "lucide-react"
-import styles from "./Sheet.module.css"
+import styles from "../styles/components/Sheet.module.css"
 
 const Sheet = SheetPrimitive.Root
 

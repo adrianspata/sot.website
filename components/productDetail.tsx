@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useCart } from '../App';
 import { products } from './ProductList';
 import { ArrowLeft } from 'lucide-react';
-import styles from './productDetail.module.css';
+import styles from '../styles/components/productDetail.module.css';
 
 const ProductDetail = () => {
   const { productId } = useParams<{ productId: string }>();

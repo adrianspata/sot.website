@@ -16,7 +16,7 @@ import {
   switchToAutoMode,
   getCurrentThemeMode,
 } from "../helpers/themeMode";
-import styles from "./ThemeModeSwitch.module.css";
+import styles from "../styles/components/ThemeModeSwitch.module.css";
 
 export interface ThemeModeSwitchProps {
   /**

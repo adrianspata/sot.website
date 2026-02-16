@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import styles from "./VideoWithMute.module.css";
+import styles from "../styles/components/VideoWithMute.module.css";
 
 type VideoSource = {
   mp4: string;

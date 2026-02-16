@@ -1,4 +1,4 @@
-import styles from "./Skeleton.module.css"
+import styles from "../styles/components/Skeleton.module.css"
 
 function Skeleton({
   className,

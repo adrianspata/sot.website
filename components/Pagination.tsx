@@ -1,6 +1,6 @@
 import * as React from "react"
 import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react"
-import styles from "./Pagination.module.css"
+import styles from "../styles/components/Pagination.module.css"
 
 const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
   <nav

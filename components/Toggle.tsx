@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import * as TogglePrimitive from "@radix-ui/react-toggle"
-import styles from "./Toggle.module.css"
+import styles from "../styles/components/Toggle.module.css"
 
 export const Toggle = React.forwardRef<
   React.ElementRef<typeof TogglePrimitive.Root>,

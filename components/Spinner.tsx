@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Spinner.module.css";
+import styles from "../styles/components/Spinner.module.css";
 
 interface SpinnerProps extends React.HTMLAttributes<HTMLDivElement> {
   size?: "sm" | "md" | "lg";

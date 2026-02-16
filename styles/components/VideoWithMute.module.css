@@ -1,0 +1,36 @@
+.muteBtn {
+  position: absolute;
+  right: max(240px, env(safe-area-inset-right));
+  top: max(910px, env(safe-area-inset-bottom));
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 999px;
+  padding: 0;
+
+  color: #e1e1e1;
+  cursor: pointer;
+  transition: background 120ms ease, transform 120ms ease;
+}
+
+.muteBtn:hover,
+.muteBtn:focus-visible {
+  outline: none;
+}
+
+.muteBtn:active {
+  transform: scale(0.96);
+}
+
+/* Skala FA-ikonen */
+.muteBtn > i {
+  font-size: 18px;
+  line-height: 1;
+  pointer-events: none;
+}
