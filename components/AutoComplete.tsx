@@ -10,7 +10,7 @@ import {
 import { Popover, PopoverContent, PopoverTrigger } from "./Popover";
 
 import { Skeleton } from "./Skeleton";
-import styles from "./AutoComplete.module.css";
+import styles from "../styles/components/AutoComplete.module.css";
 
 export type Option<T = unknown> = {
   value: string;

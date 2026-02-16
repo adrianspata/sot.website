@@ -1,4 +1,4 @@
-import styles from './Badge.module.css';
+import styles from '../styles/components/Badge.module.css';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'success' | 'warning';

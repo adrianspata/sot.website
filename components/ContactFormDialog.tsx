@@ -22,7 +22,7 @@ const schema = z.object({
   subject: z.string().optional(),
   message: z.string().min(1, "Message is required"),
 });
-import styles from "./ContactFormDialog.module.css";
+import styles from "../styles/components/ContactFormDialog.module.css";
 
 type ContactFormValues = {
   name: string;

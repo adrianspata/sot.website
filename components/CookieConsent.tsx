@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { Button } from "./Button";
 import { Switch } from "./Switch";
-import styles from "./CookieConsent.module.css";
+import styles from "../styles/components/CookieConsent.module.css";
 
 type ConsentState = {
     necessary: boolean;

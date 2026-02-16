@@ -1,0 +1,80 @@
+.currencyTrigger {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  height: auto;
+  font-family: var(--font-family-base);
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--foreground);
+  gap: var(--spacing-1);
+  width: auto;
+  min-width: 45px; /* Ensure enough space for code and icon */
+  justify-content: flex-start;
+}
+
+.currencyTrigger:hover,
+.currencyTrigger:focus {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  color: var(--secondary);
+}
+
+.currencyTrigger[data-placeholder] {
+  color: var(--muted-foreground);
+}
+
+.currencyTrigger > svg {
+  color: var(--foreground);
+  height: 12px;
+  width: 12px;
+}
+
+.currencyTrigger:hover > svg,
+.currencyTrigger:focus > svg {
+  color: var(--secondary);
+}
+
+.currencyContent {
+  min-width: 80px; /* Compact width */
+  border-radius: var(--radius);
+  background-color: var(--background);
+  border: 1px solid var(--border);
+}
+
+.currencyItem {
+  font-family: var(--font-family-base);
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: var(--spacing-2) var(--spacing-3);
+  cursor: pointer;
+  border-radius: var(--radius);
+}
+
+.currencyItem[data-state="checked"] {
+  font-weight: 700;
+}
+
+/* Hide checkmark indicator completely */
+.currencyContent :global(.selectItemIndicator) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Also hide the Check icon specifically */
+.currencyContent :global(.checkIcon) {
+  display: none !important;
+}
+
+/* Remove padding-right that makes space for indicator */
+.currencyItem {
+  padding-right: var(--spacing-3) !important;
+}
+

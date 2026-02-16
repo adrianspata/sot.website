@@ -6,7 +6,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./Select";
-import styles from "./CurrencySelector.module.css";
+import styles from "../styles/components/CurrencySelector.module.css";
 
 export const CurrencySelector = ({ className }: { className?: string }) => {
   const { currency, setCurrency, availableCurrencies } = useCurrency();

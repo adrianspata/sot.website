@@ -1,5 +1,5 @@
 import { InputHTMLAttributes, forwardRef } from 'react';
-import styles from './Checkbox.module.css';
+import styles from '../styles/components/Checkbox.module.css';
 import { Check } from 'lucide-react';
 export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'>;
 

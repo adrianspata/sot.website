@@ -14,7 +14,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { Button } from "./Button";
-import styles from "./Carousel.module.css";
+import styles from "../styles/components/Carousel.module.css";
 
 type CarouselProps = {
   opts?: EmblaOptionsType;
