@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { Upload, X } from 'lucide-react';
 import { Button } from './Button';
-import styles from './FileDropzone.module.css';
+import styles from '../styles/components/FileDropzone.module.css';
 
 export interface FileDropzoneProps {
   className?: string;

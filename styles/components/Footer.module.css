@@ -1,0 +1,370 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@900&display=swap");
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--spacing-8);
+  margin-top: var(--spacing-16);
+  background-color: #ffffff;
+  z-index: var(--z-nav-sticky);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+}
+
+.footer.fixed {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.desktopLayout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.mobileLayout {
+  display: none;
+}
+
+/* Desktop Level 1: Newsletter Section */
+.topLevel {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-6) 0;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-6);
+}
+
+.newsletterButton {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family:
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  font-weight: 900;
+  font-size: 0.7rem;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+  color: #000000;
+  cursor: pointer;
+  transition: text-transform var(--animation-duration-fast) ease;
+  width: 6rem;
+  text-align: center;
+  display: inline-block;
+}
+
+.newsletterButton:hover {
+  text-transform: lowercase;
+}
+
+.signupForm {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-width 0.5s ease,
+    opacity 0.5s ease;
+  visibility: hidden;
+}
+
+.signupForm.visible {
+  max-width: 500px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.emailInput {
+  height: 32px;
+  border-radius: 0;
+  border-color: var(--border);
+  background-color: #ffffff;
+  color: #000000;
+  width: 250px;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: none;
+}
+
+.emailInput:focus {
+  border-color: var(--primary);
+  box-shadow: none;
+}
+
+.subscribeButton {
+  height: 32px;
+  border-radius: 0;
+  font-family:
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  font-weight: 400;
+  padding: 0 var(--spacing-4);
+  white-space: nowrap;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 0.625rem;
+  border: 0px solid #000000;
+}
+
+.subscribeButton:hover {
+  background-color: #c19a6b;
+}
+
+.thankYouMessage {
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: #c19a6b;
+  font-family:
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  font-weight: 500;
+}
+
+/* Desktop Level 2: Menu List */
+.middleLevel {
+  display: none;
+  align-items: flex-start;
+  padding: var(--spacing-6) 0;
+}
+
+.menuList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+}
+
+.menuLink {
+  font-family: "Work Sans", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000000;
+  text-decoration: none;
+  transition: color var(--animation-duration-fast) ease;
+}
+
+.menuLink:hover {
+  color: #c19a6b;
+}
+
+/* Desktop Level 3: Logo and Copyright */
+.bottomLevel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-6) 0;
+  position: relative;
+}
+
+.currencySelector {
+  margin-right: auto;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.copyright {
+  font-family:
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  color: #000000;
+  margin-left: auto;
+}
+
+/* Mobile Responsive Styles */
+
+@media (max-width: 768px) {
+  .footer {
+    padding: var(--spacing-6) var(--spacing-4);
+    margin-top: 20px;
+  }
+
+  .footer.fixed {
+    position: relative;
+  }
+
+  .desktopLayout {
+    display: none;
+  }
+
+  .mobileLayout {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+
+  /* Mobile Level 1: Newsletter Section */
+  .mobileNewsletterSection {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+    padding-bottom: var(--spacing-3);
+  }
+
+  .mobileNewsletterHeading {
+    font-size: 0.73rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #000000;
+    font-family:
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
+    font-weight: 900;
+  }
+
+  .mobileSignupForm {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+  }
+
+  .mobileEmailInput {
+    height: 36px;
+    border-radius: 0;
+    border: 1px solid var(--border);
+    background-color: #ffffff;
+    color: #000000;
+    flex: 1;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: none;
+  }
+
+  .mobileEmailInput::placeholder {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .mobileEmailInput:focus {
+    border-color: var(--primary);
+    box-shadow: none;
+  }
+
+  .mobileSubscribeButton {
+    height: 36px;
+    border-radius: 0;
+    font-family:
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
+    font-weight: 400;
+    padding: 0 var(--spacing-3);
+    white-space: nowrap;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 0.5625rem;
+    border: 0px solid #000000;
+    min-width: fit-content;
+  }
+
+  .mobileSubscribeButton:hover {
+    background-color: #c19a6b;
+  }
+
+  .mobileThankYouMessage {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: #c19a6b;
+    font-family:
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
+    font-weight: 900;
+  }
+
+  .mobileSeparator {
+    height: 1px;
+    background-color: var(--border);
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Mobile Level 2: Menu List */
+  .mobileMenuSection {
+    display: none;
+    padding: var(--spacing-3) 0;
+  }
+
+  .mobileMenuList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-3);
+  }
+
+  .mobileMenuLink {
+    font-family:
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
+    font-weight: 400;
+    font-size: 0.625rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #000000;
+    text-decoration: none;
+    transition: color var(--animation-duration-fast) ease;
+  }
+
+  .mobileMenuLink:hover {
+    color: #c19a6b;
+  }
+
+  /* Mobile Level 3: Logo and Copyright */
+  .mobileCopyrightSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: var(--spacing-12);
+    color: #000000;
+    position: relative;
+  }
+
+  .mobileCopyrightSection .logo {
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .mobileCopyrightSection span {
+    font-family:
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
+    margin-left: auto;
+  }
+
+  .mobileCurrencySelector {
+    margin-right: auto;
+  }
+}

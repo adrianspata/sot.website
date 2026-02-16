@@ -6,7 +6,7 @@ import { Button } from "./Button";
 
 // Currency selector - commented out for now, uncomment when adding products
 // import { CurrencySelector } from "./CurrencySelector";
-import styles from "./Footer.module.css";
+import styles from "../styles/components/Footer.module.css";
 
 export const Footer = () => {
   const location = useLocation();

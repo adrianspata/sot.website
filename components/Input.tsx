@@ -1,5 +1,5 @@
 import React, { forwardRef, InputHTMLAttributes } from "react";
-import styles from "./Input.module.css";
+import styles from "../styles/components/Input.module.css";
 
 type InputProps = InputHTMLAttributes<HTMLInputElement>;
 

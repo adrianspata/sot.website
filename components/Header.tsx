@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { CartItem } from "../App";
 import { Cart } from "./Cart";
-import styles from "./Header.module.css";
+import styles from "../styles/components/Header.module.css";
 
 interface HeaderProps {
   cartItems?: CartItem[];

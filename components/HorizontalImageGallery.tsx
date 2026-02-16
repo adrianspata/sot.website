@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import styles from "./HorizontalImageGallery.module.css";
+import styles from "../styles/components/HorizontalImageGallery.module.css";
 
 interface Image {
   src: string;

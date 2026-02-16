@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { Button } from "./Button";
 import { submitToWeb3Forms } from "../helpers/newsletter";
-import styles from "./NewsletterPopup.module.css";
+import styles from "../styles/components/NewsletterPopup.module.css";
 
 export const NewsletterPopup = () => {
     const [isVisible, setIsVisible] = useState(false);
