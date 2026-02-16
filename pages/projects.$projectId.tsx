@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Helmet } from "@dr.pogodin/react-helmet";
-import styles from "./projects.$projectId.module.css";
+import styles from "../styles/pages/projects.$projectId.module.css";
 
 interface ProjectDetail {
   id: string;

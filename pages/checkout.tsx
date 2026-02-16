@@ -1,7 +1,7 @@
 import React from 'react';
 import { useCart } from '../App';
 import { Link } from 'react-router-dom';
-import styles from './checkout.module.css';
+import styles from '../styles/pages/checkout.module.css';
 
 export default function CheckoutPage() {
   const { cartItems, clearCart } = useCart();

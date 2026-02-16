@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "@dr.pogodin/react-helmet";
 import { HorizontalImageGallery } from "../components/HorizontalImageGallery";
-import styles from "./_index.module.css";
+import styles from "../styles/pages/_index.module.css";
 
 type HeroOption = {
   type: 'video' | 'image';
