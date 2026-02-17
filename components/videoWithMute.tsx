@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import styles from "../styles/components/VideoWithMute.module.css";
 
 type VideoSource = {
@@ -29,7 +29,7 @@ export function VideoWithMute({
     const next = !isMuted;
     setIsMuted(next);
     v.muted = next;
-    if (!next) { try { await v.play(); } catch {} }
+    if (!next) { try { await v.play(); } catch { } }
   };
 
   return (

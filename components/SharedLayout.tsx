@@ -1,4 +1,3 @@
-import React from "react";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { useCart } from "../App";
@@ -10,7 +9,7 @@ interface SharedLayoutProps {
 
 export const SharedLayout = ({ children }: SharedLayoutProps) => {
   const { cartItems } = useCart();
-  
+
   return (
     <div className={styles.layout}>
       <Header cartItems={cartItems} />
