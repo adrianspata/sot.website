@@ -46,7 +46,6 @@ type AutoCompleteProps<T = unknown> = {
 export const AutoComplete = <T = unknown,>({
   options,
   placeholder,
-  emptyMessage,
   value,
   onValueChange,
   inputValue,

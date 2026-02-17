@@ -41,7 +41,7 @@ interface ProductListProps {
   onAddToCart?: (product: Product) => void;
 }
 
-export const ProductList: React.FC<ProductListProps> = ({ onAddToCart }) => {
+export const ProductList: React.FC<ProductListProps> = ({ }) => {
   return (
     <div className={styles.productGrid}>
       {products.map((product) => (

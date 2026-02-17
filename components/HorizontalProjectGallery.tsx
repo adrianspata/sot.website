@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import styles from "../styles/components/HorizontalProjectGallery.module.css";
 
 interface Project {
