@@ -1,5 +1,3 @@
-import React from "react";
-import { Helmet } from "@dr.pogodin/react-helmet";
 import styles from "../styles/pages/contact.module.css";
 
 const ContactPage = () => {

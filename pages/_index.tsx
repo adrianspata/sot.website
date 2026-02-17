@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "@dr.pogodin/react-helmet";
 import { HorizontalImageGallery } from "../components/HorizontalImageGallery";
 import styles from "../styles/pages/_index.module.css";
 
@@ -15,7 +14,7 @@ type HeroOption = {
 type DeviceType = 'desktop' | 'mobile';
 
 const Hero = ({ hero, device }: { hero: HeroOption; device: DeviceType }) => {
-  const className = hero.type === 'video' 
+  const className = hero.type === 'video'
     ? (device === 'mobile' ? styles.heroVideoMobile : styles.heroVideoDesktop)
     : (device === 'mobile' ? styles.heroImageMobile : styles.heroImageDesktop);
 
