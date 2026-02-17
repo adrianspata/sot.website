@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "@dr.pogodin/react-helmet";
 import styles from "../styles/pages/shop.module.css";
 import { ProductList } from "../components/ProductList";
 

@@ -1,5 +1,3 @@
-import React from "react";
-import { Helmet } from "@dr.pogodin/react-helmet";
 import { Link } from "react-router-dom";
 import styles from "../styles/pages/projects.module.css";
 

@@ -1,12 +1,11 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import styles from "../styles/pages/notFound.module.css";
 
 const NotFoundPage = () => {
   return (
     <div className={styles.pageContainer}>
-      <img 
-        src="/images/sot_scan3 wide.webp" 
+      <img
+        src="/images/sot_scan3 wide.webp"
         alt="SOT Background"
         className={styles.backgroundImage}
       />
